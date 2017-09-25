@@ -12,7 +12,7 @@ class Dados {
 
 
 				for(int i = 0; i < 50; i++){	
-				System.out.println(d6.sorteiaDado());
+				System.out.println(d6.sorteiaDadoD20()+1);
 				}
 			
 			}
@@ -23,22 +23,22 @@ class Dados {
 
 
 	//int é o objeto do array dado6
-	 int sorteiaDado(){
-
-		//int[] dado6  = new int[6];
-
-		int aux = 1;
+	 public int sorteiaDadoD6(){
+		
 		Random radom  = new Random();
 
-		return aux = 1 + radom.nextInt(6);
-
-		//System.out.println(aux);
-		
-		//for(int i = 0; i < 6; i++){
-		//	 dado6[i] = i +1 ;
-		//}
+		return radom.nextInt(6);
 
 	}
+
+	public int sorteiaDadoD20(){
+
+		//int aux;
+		Random radom  = new Random();
+
+		return radom.nextInt(20);
+	}
+
 
 	void muda(){
 		System.out.println("Olá");
