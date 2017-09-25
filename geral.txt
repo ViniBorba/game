@@ -1,0 +1,33 @@
+Ideias soltas:
+[O principal vilão do jogo vai ser Cutulhu e vc não terá como derrotar ele.]
+[Quando for sortear o dado mostrar a imagem do dado.]
+[Mostrar imagens das armaduras e espedas.]
+
+.............................................................
+
+Começa: Este é um mundo onde onde não se mede o tempo.
+		Um mundo onde a magia, a força e a coragem são suas maiores armas.
+		Um mundo além, muito além.
+		Onde os Deuses e Deusas, Herois e Vilões, Monstros e Aberrações vivem.
+		Mas nada se compara ao que está por vir...
+
+Mostra o nome do Jogo
+
+		Vocẽ precisa escolher um personagem Mago ou Guerreiro?
+		Apete M para Mago e G para Guerreiro.
+
+
+		Qual o nome do seu personagem?
+
+Começa Escolhendo pontos para distribuir entre FORÇA, ARMADURA e MÁGICA (isso provalvelmente)
+vai ser um objeto cada um, para poder perder e ganhar mais durante o jogo. Tipo um menu, isso também
+vai ter para mostrar moedas, Coins. Esses atributos começaz zerados e podem ser preenchidos.
+		Você tem 10 pontos para distribuir entre Força, Armadura e Poder Mágico. Escolha com sabedoria
+
+Começa na Taberna
+		Parece que não você não tem mais nem uma Coin.
+		O melhor seria sair para uma aventura.
+		Aventuras sempre rendem muitas moedas e você sempre pode enocntrar alguns itens melhores.
+		No centro da cidade ha um mural com algumas aventuras, aceite uma delas.
+
+Mostrar o mural com aventuras
