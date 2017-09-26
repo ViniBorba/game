@@ -4,7 +4,7 @@ class Dados {
 
 
 
-			public static void main(String[] args) {
+			public static void main(String[] args) throws InterruptedException {
 
 
 
@@ -16,8 +16,13 @@ class Dados {
 				}
 			
 				d6.nomeDoJogo();
+
+				Thread.sleep(6000);
+
+				
+
 				d6.guerreiro();
-				d6.mago();
+				//d6.mago();
 
 			}
 	
