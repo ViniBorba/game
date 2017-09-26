@@ -1,34 +1,45 @@
 import java.util.Random;
 
-class Dados {
+class Dados  {
 
 
 
 			public static void main(String[] args) throws InterruptedException {
 
-
-
 				Dados d6 = new Dados();
 
-
-				for(int i = 0; i < 2; i++){	
-				System.out.println(d6.sorteiaDadoD20()+1);
-				}
-			
-				d6.nomeDoJogo();
-
-				Thread.sleep(6000);
-
+				System.out.println();
 				
 
-				d6.guerreiro();
+
+				//for(int i = 0; i < 2; i++){	
+				//System.out.println(d6.sorteiaDadoD20()+1);
+				//}
+			
+				//d6.nomeDoJogo();
+
+				//String valor = "uma palavra escrita lentamente.";
+
+				d6.lento("uma palavra escrita lentamente.");
+		
+				
+				System.out.println();
+				
+
+				//d6.guerreiro();
 				//d6.mago();
 
 			}
 	
 
 
+	void lento(String valor)throws InterruptedException{
 
+		for(char c: valor.toCharArray()){
+					System.out.print(c);
+					Thread.sleep(100);
+				}
+	}
 
 
 	//int é o objeto do array dado6
