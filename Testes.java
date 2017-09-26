@@ -8,19 +8,50 @@ class Dados  {
 
 				Dados d6 = new Dados();
 
+				for(int i = 0; i < 70; i++){
+					System.out.println();
+				}
+
+				d6.lento("Este é um mundo onde não se mede o tempo.");
+				System.out.println();
+				Thread.sleep(300);
+
+				d6.lento("Um mundo onde a magia, a força e a coragem são suas maiores armas.");
+				System.out.println();
+				Thread.sleep(300);
+
+				d6.lento("Um mundo além, muito além.");
+				System.out.println();
+				Thread.sleep(300);
+
+				d6.lento("Onde os Deuses e Deusas, Herois e Vilões, Monstros e Aberrações vivem.");
+				System.out.println();
+				Thread.sleep(300);
+
+				d6.lento("Mas nada se compara ao que está por vir");
+				Thread.sleep(800);
+				System.out.print(".");
+				Thread.sleep(800);
+				System.out.print(".");
+				Thread.sleep(800);
+				System.out.print(".");
 				System.out.println();
 				
+				Thread.sleep(2000);
 
+				d6.nomeDoJogo();
+
+				Thread.sleep(2000);
 
 				//for(int i = 0; i < 2; i++){	
 				//System.out.println(d6.sorteiaDadoD20()+1);
 				//}
 			
-				//d6.nomeDoJogo();
+				
 
 				//String valor = "uma palavra escrita lentamente.";
 
-				d6.lento("uma palavra escrita lentamente.");
+				//d6.lento("uma palavra escrita lentamente.");
 		
 				
 				System.out.println();
@@ -32,12 +63,12 @@ class Dados  {
 			}
 	
 
-
+	//Metodo que pega uma frase e escreve ela lentamente.
 	void lento(String valor)throws InterruptedException{
 
 		for(char c: valor.toCharArray()){
 					System.out.print(c);
-					Thread.sleep(100);
+					Thread.sleep(125);
 				}
 	}
 
