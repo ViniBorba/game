@@ -1,6 +1,7 @@
 import java.util.Random;
+import java.util.Scanner;
 
-class Jogo  {
+class Game  {
 
 
 
@@ -8,7 +9,9 @@ class Jogo  {
 
 				Heroi heroiDoJogo = new Heroi();
 
-				heroiDoJogo.recebeLetra("w");
+				heroiDoJogo.recebeLetra("m");
+
+
 
 
 				/*
@@ -101,21 +104,30 @@ class Jogo  {
 #heroi
 */
 
+
 class Heroi{
 
-	private String nomeDoHeroi;
-	private int forcaDoHeroi;
-	private int defesaDoHeroi;
-	private int poderMagicoDoHeroi;
+	private static String nomeDoHeroi;
+	private static int forcaDoHeroi;
+	private static int defesaDoHeroi;
+	private static int poderMagicoDoHeroi;
+	private static int moedasDoHerois;
 
 	
 		//Metodo para iniciar o Herois, depedendo da escolha do jogador
 		void recebeLetra (String letra)throws InterruptedException{
-			FormataString formata = new FormataString();
+			FormataString formata = new FormataString();//objeto da classe que formata String
+			Scanner entrada = new Scanner(System.in);//salva atributos do heroi
+			Equipamentos equipamentos = new Equipamentos();
 
 			if(letra == "m" || letra == "M"){
 				
-				formata.lento("Você escolheu Mago\n");
+				formata.lento("Você escolheu o Mago.");
+				formata.lento("Sua maior força é a Magia.");
+				formata.lento("Seus atributos: ");
+				this.nomeDoHeroi = entrada.next();
+				System.out.println(this.nomeDoHeroi);
+
 				
 			}
 				else if (letra == "g" || letra == "G"){
@@ -127,6 +139,10 @@ class Heroi{
 						
 					}
 		
+		}
+
+		void setpoderMagicoDoHeroi(int poder){
+			this.poderMagicoDoHeroi += poder;
 		}
 }
 
@@ -172,5 +188,18 @@ class Imagens{
 	//Mostra mago e guerreiro juntos
 	void guerreiroEMagoImagem(){
 				System.out.println("                 *8           |                ..            \n                8@#           |           #   .8@@           \n               ^8@@           |            #  .##8@ #        \n              ^88#&*          |             #.#88@@88        \n            *&&8@@$88^        |            . #888@@@888.     \n     888     8@$@@$$&         |           88..@888@@8@@8.    \n    8|8$8    @8&8|$8&&        |          .88#.#888@8@@88#    \n    $& 8&    8@|$8#8          |          8@@@8888#8@@@@@8    \n    @88      &|8##$8@         |          #8@@8888888@@@@8    \n     8@$     ^@$88$@8&        |          #888888888@#.@8@8   \n     @@8    &8888$@8#^        |        .##88@@@@@@8@. 8@@@   \n     ^$    8@$|$$|#@@8        |        8@@@8@@@@@@@@8  @@@   \n      @     ^$$^8@88$$        |        8@8@@8@@8@@8@8  #@@   \n     &@^&8^8@|#&@8888#&       |        @@@8@@@@@@@@@@# #@@   \n     8@@8@@&$|$@|8&888        |        @@8#@@@@@@@@@@8 #@@   \n      @&    $|$$||&88#        |        888@@@@@@@@@@@@##88   \n      8     $$$$@|8^8#        |        8#.@@@@@@@@@8@@@.#.   \n      &    8#@8$$$|&8#        |       ##  8@@@@@@@@@@@@8     \n      8    @8@8@$8@8&88       |       8   @@@@@@@@@@8@@8     \n      8    @$88@$&&@&8@       |   ##.88   8@@88@@@@@@@@8     \n      8    $$&8#|8 #8&@@      |   .@@8.#8 88@@8@88@@@@@      \n      8^   #|&8#||^8@8#       |    #@@ 8@ 8@@@@88@@@@@@      \n      8^  &8|888@|88@888      |    8@@8@@. @@@@@@8@8@@@      \n      8^  8#|8^8@|@&8@8@      |    # @@@@. 8@@88@@@.8@@      \n      8& 88#&88$@@88@@888     |      8@@8  .@@. .88  @@.     \n      88 8#@& @$^  8#@8#@^    |     8@@8.  .@@      .@@8     \n      #8    & @$    @|#&@^    |     #@8    @@@.      8@@     \n      @&     $$$^   8$@       |           #@@@       8@@.    \n      &&  ^&8@$$^   @@@       |          #888#       #@@#    \n       ^  8@@||$^   8#@       |         #^^@@@      8@@@@#   \n          ^888&    88@@       |                              \n                  8@@$|       |                              \n                   888^       |                              \n");
+	}
+}
+
+/*
+#armas #equipamentos
+*/
+class Equipamentos{
+
+	Heroi heroiDoJogo = new Heroi();
+
+	void cajadoSimples(){
+		heroiDoJogo.setpoderMagicoDoHeroi(1);		
+
 	}
 }
