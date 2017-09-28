@@ -6,6 +6,12 @@ class Dados  {
 
 			public static void main(String[] args) throws InterruptedException {
 
+				Heroi heroiDoJogo = new Heroi();
+
+				heroiDoJogo.recebeLetra("g");
+
+
+				/*
 				Dados d6 = new Dados();
 
 				for(int i = 0; i < 70; i++){
@@ -43,6 +49,9 @@ class Dados  {
 
 				Thread.sleep(2000);
 
+				//Mostra mago e guerreiro juntos
+				System.out.println("                 *8           |                ..            \n                8@#           |           #   .8@@           \n               ^8@@           |            #  .##8@ #        \n              ^88#&*          |             #.#88@@88        \n            *&&8@@$88^        |            . #888@@@888.     \n     888     8@$@@$$&         |           88..@888@@8@@8.    \n    8|8$8    @8&8|$8&&        |          .88#.#888@8@@88#    \n    $& 8&    8@|$8#8          |          8@@@8888#8@@@@@8    \n    @88      &|8##$8@         |          #8@@8888888@@@@8    \n     8@$     ^@$88$@8&        |          #888888888@#.@8@8   \n     @@8    &8888$@8#^        |        .##88@@@@@@8@. 8@@@   \n     ^$    8@$|$$|#@@8        |        8@@@8@@@@@@@@8  @@@   \n      @     ^$$^8@88$$        |        8@8@@8@@8@@8@8  #@@   \n     &@^&8^8@|#&@8888#&       |        @@@8@@@@@@@@@@# #@@   \n     8@@8@@&$|$@|8&888        |        @@8#@@@@@@@@@@8 #@@   \n      @&    $|$$||&88#        |        888@@@@@@@@@@@@##88   \n      8     $$$$@|8^8#        |        8#.@@@@@@@@@8@@@.#.   \n      &    8#@8$$$|&8#        |       ##  8@@@@@@@@@@@@8     \n      8    @8@8@$8@8&88       |       8   @@@@@@@@@@8@@8     \n      8    @$88@$&&@&8@       |   ##.88   8@@88@@@@@@@@8     \n      8    $$&8#|8 #8&@@      |   .@@8.#8 88@@8@88@@@@@      \n      8^   #|&8#||^8@8#       |    #@@ 8@ 8@@@@88@@@@@@      \n      8^  &8|888@|88@888      |    8@@8@@. @@@@@@8@8@@@      \n      8^  8#|8^8@|@&8@8@      |    # @@@@. 8@@88@@@.8@@      \n      8& 88#&88$@@88@@888     |      8@@8  .@@. .88  @@.     \n      88 8#@& @$^  8#@8#@^    |     8@@8.  .@@      .@@8     \n      #8    & @$    @|#&@^    |     #@8    @@@.      8@@     \n      @&     $$$^   8$@       |           #@@@       8@@.    \n      &&  ^&8@$$^   @@@       |          #888#       #@@#    \n       ^  8@@||$^   8#@       |         #^^@@@      8@@@@#   \n          ^888&    88@@       |                              \n                  8@@$|       |                              \n                   888^       |                              \n");
+
 				//for(int i = 0; i < 2; i++){	
 				//System.out.println(d6.sorteiaDadoD20()+1);
 				//}
@@ -59,7 +68,7 @@ class Dados  {
 
 				//d6.guerreiro();
 				//d6.mago();
-
+			*/
 			}
 	
 
@@ -112,4 +121,35 @@ class Dados  {
 
 }
 
+/*
+#heroi
+*/
 
+class Heroi{
+
+	private String nomeDoHeroi;
+	private int forcaDoHeroi;
+	private int defesaDoHeroi;
+	private int poderMagicoDoHeroi;
+
+	
+		void recebeLetra (String letra){
+			if(letra == "m" || letra == "M"){
+
+
+
+
+				System.out.println("Mago");
+				//return;
+			}
+				else if (letra == "g" || letra == "G"){
+					System.out.println("Guerreiro");
+					
+				}
+					else{
+						System.out.println("Volta");
+						
+					}
+		
+		}
+}
