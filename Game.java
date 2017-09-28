@@ -9,7 +9,7 @@ class Game  {
 
 				Heroi heroiDoJogo = new Heroi();
 
-				heroiDoJogo.recebeLetra("m");
+				heroiDoJogo.recebeHeroi("m");
 
 
 
@@ -115,18 +115,33 @@ class Heroi{
 
 	
 		//Metodo para iniciar o Herois, depedendo da escolha do jogador
-		void recebeLetra (String letra)throws InterruptedException{
+		void recebeHeroi (String letra)throws InterruptedException{
 			FormataString formata = new FormataString();//objeto da classe que formata String
 			Scanner entrada = new Scanner(System.in);//salva atributos do heroi
-			Equipamentos equipamentos = new Equipamentos();
+			Equipamentos equipamentos = new Equipamentos();//Equipamentos do Heroi
+			MostraInventario invetario = new MostraInventario();// mostra os atributos e equipamentos.
 
 			if(letra == "m" || letra == "M"){
-				
-				formata.lento("Você escolheu o Mago.");
-				formata.lento("Sua maior força é a Magia.");
-				formata.lento("Seus atributos: ");
+				formata.lento("Você escolheu o Mago.\n");
+				formata.lento("Escolha um nome para o seu Heroi: ");
 				this.nomeDoHeroi = entrada.next();
-				System.out.println(this.nomeDoHeroi);
+
+				poderMagicoDoHeroi = 6;
+				forcaDoHeroi = 2;
+				defesaDoHeroi = 2;
+				moedasDoHerois = 0;
+
+				//Equipamentos
+				equipamentos.cajadoSimples();
+
+				formata.lento("Sua maior força é a Magia.\n");
+				formata.lento("Seus atributos: ");
+				invetario.mostrarAtributos();
+
+			
+				//setar o nome
+				//this.nomeDoHeroi = entrada.next();
+				//System.out.println(this.nomeDoHeroi);
 
 				
 			}
@@ -143,6 +158,9 @@ class Heroi{
 
 		void setpoderMagicoDoHeroi(int poder){
 			this.poderMagicoDoHeroi += poder;
+		}
+		int getpoderMagicoDoHeroi(){
+			return this.poderMagicoDoHeroi;
 		}
 }
 
@@ -202,4 +220,23 @@ class Equipamentos{
 		heroiDoJogo.setpoderMagicoDoHeroi(1);		
 
 	}
+	void getcajadoSimples(){
+		System.out.println("-> Cajado simples (+1 de Poder Mágico)");
+	}
+}
+
+
+/*
+#MostraInventario #invetario
+*/
+class MostraInventario{
+
+	Equipamentos equipamentos = new Equipamentos();//Equipamentos do Heroi
+	Heroi heroiDoJogo = new Heroi();
+
+	void mostrarAtributos(){
+		//System.out.println(heroiDoJogo.getpoderMagicoDoHeroi());
+		System.out.println("\n \n+---------------------------+\n|Força Bruta: \n|Defesa de Armadura:   \n|Poder Mágico: "+heroiDoJogo.getpoderMagicoDoHeroi()+"\n|                       \n|Coins:                \n+---------------------------+\n");
+	}
+
 }
