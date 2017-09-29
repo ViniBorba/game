@@ -112,13 +112,16 @@ class Heroi{
 	private static int defesaDoHeroi;
 	private static int poderMagicoDoHeroi;
 	private static int moedasDoHerois;
+	private static EquipamentoArma armaDoHeroi;
+	//private static Equipamentos armaduraDoHeroi;
 
 	
 		//Metodo para iniciar o Herois, depedendo da escolha do jogador
 		void recebeHeroi (String letra)throws InterruptedException{
 			FormataString formata = new FormataString();//objeto da classe que formata String
 			Scanner entrada = new Scanner(System.in);//salva atributos do heroi
-			Equipamentos equipamentos = new Equipamentos();//Equipamentos do Heroi
+			//Equipamentos equipamentos = new Equipamentos();//Equipamentos do Heroi
+			EquipamentoArma cajadoSimplorio = new EquipamentoArma();
 			MostraInventario invetario = new MostraInventario();// mostra os atributos e equipamentos.
 
 			if(letra == "m" || letra == "M"){
@@ -130,21 +133,17 @@ class Heroi{
 				forcaDoHeroi = 2;
 				defesaDoHeroi = 2;
 				moedasDoHerois = 0;
-
+				armaDoHeroi = cajadoSimplorio;
 				//Equipamentos
-				equipamentos.cajadoSimples();
+				//equipamentos.cajadoSimples();
+				cajadoSimplorio.setaumentaPoderMagico(1);
+				cajadoSimplorio.setdescreveArma("Cajado Simples");
 
 				formata.lento("Sua maior força é a Magia.\n");
 				formata.lento("Seus atributos: ");
 				invetario.mostrarAtributos();
-
-			
-				//setar o nome
-				//this.nomeDoHeroi = entrada.next();
-				//System.out.println(this.nomeDoHeroi);
-
 				
-			}
+			}	
 				else if (letra == "g" || letra == "G"){
 					formata.lento("Você escolheu ser Geurreiro\n");
 					
@@ -156,11 +155,43 @@ class Heroi{
 		
 		}
 
-		void setpoderMagicoDoHeroi(int poder){
-			this.poderMagicoDoHeroi += poder;
+		//GET para mostrar atributos e SET para mudar os atributos
+		
+		//Get mostra nome do Heroi
+		public String getnomeDoHeroi(){
+			return this.nomeDoHeroi;
 		}
-		int getpoderMagicoDoHeroi(){
+
+		//set voi para mudar a força e get int para mostrar retornar a força
+		public void setforcaDoHeroi(int recebe){
+			this.forcaDoHeroi += recebe;
+		}
+		public int getforcaDoHeroi(){
+			return this.forcaDoHeroi;
+		}
+
+		//set void para mudar a defesa e get int para mostrar a defesa
+		public void setdefesaDoHeroi(int recebe){
+			this.defesaDoHeroi += recebe;
+		}
+		public int getdefesaDoHeroi(){
+			return this.defesaDoHeroi;
+		}
+
+		//set void para mudar o porder mágico e get int para mostrar
+		public void setpoderMagicoDoHeroi(int recebe){
+			this.poderMagicoDoHeroi += recebe;
+		}
+		public int getpoderMagicoDoHeroi(){
 			return this.poderMagicoDoHeroi;
+		}
+
+		//void seta para receber valor de moedas get int para mostrar quantas moedas tem
+		public void setmoedasDoHeroi(int recebe){
+			this.moedasDoHerois += recebe;
+		}
+		public int getmoedasDoHerois(){
+			return this.moedasDoHerois;
 		}
 }
 
@@ -172,7 +203,7 @@ class Heroi{
 class FormataString{
 
 	//Metodo que pega uma frase e escreve ela lentamente.
-	void lento(String valor)throws InterruptedException{
+	public void lento(String valor)throws InterruptedException{
 
 		for(char c: valor.toCharArray()){
 					System.out.print(c);
@@ -212,16 +243,68 @@ class Imagens{
 /*
 #armas #equipamentos
 */
-class Equipamentos{
+class EquipamentoArma{
+
+	private static int aumentaPoderMagico;
+	private static int aumentaForca;
+	private static int aumentaArmadura;
+	private static String descreveArma;
 
 	Heroi heroiDoJogo = new Heroi();
 
-	void cajadoSimples(){
-		heroiDoJogo.setpoderMagicoDoHeroi(1);		
+	//Se arma tem poderes ela aumenta um ou mais atributos do heroi
+	//Na criação do objeto EquipamentoArma vou passar os parametros da arma
 
+	//Apensa guarda a secreição da Arma, para mostrar no invetário.
+	void setdescreveArma(String descricao){
+		this.descreveArma = descricao;
 	}
-	void getcajadoSimples(){
-		System.out.println("-> Cajado simples (+1 de Poder Mágico)");
+	String getmostraDescricao(){
+		return descreveArma;
+	}
+
+	//Arma aumenta o poder mágico do heroi
+	void setaumentaPoderMagico(int aumentaQuanto){
+		heroiDoJogo.setpoderMagicoDoHeroi(aumentaQuanto);
+	}
+	int getaumentaForca(){
+		return this.aumentaForca;
+	}
+
+	//Arma aumenta a força do heroi do jogo 
+	void setaumentaForca(int aumentaQuanto){
+		heroiDoJogo.setforcaDoHeroi(aumentaQuanto);
+	}
+	void setaumentaArmadura(int aumentaQuanto){
+		this.aumentaArmadura += aumentaQuanto;
+	}
+
+}
+
+class EquipamentoArmadura{
+
+	private static int aumentaPoderMagico;
+	private static int aumentaForca;
+	private static int aumentaArmadura;
+	private static String descreveArmadura;
+
+	Heroi heroiDoJogo = new Heroi();
+
+	void setdescreveArmadura(String descricao){
+		this.descreveArmadura = descricao;
+	}
+	String getmostraDescricao(){
+		return descreveArmadura;
+	}
+
+	void setaumentaPoderMagico(int aumentaQuanto){
+		heroiDoJogo.setpoderMagicoDoHeroi(aumentaQuanto);
+	}
+	void setaumentaForca(int aumentaQuanto){
+		this.aumentaForca += aumentaQuanto;
+	}
+	void setaumentaArmadura(int aumentaQuanto){
+		this.aumentaArmadura += aumentaQuanto;
 	}
 }
 
@@ -232,11 +315,13 @@ class Equipamentos{
 class MostraInventario{
 
 	Equipamentos equipamentos = new Equipamentos();//Equipamentos do Heroi
+	EquipamentoArma equipamentosArma = new EquipamentoArma();
 	Heroi heroiDoJogo = new Heroi();
 
-	void mostrarAtributos(){
+
+	public void mostrarAtributos(){
 		//System.out.println(heroiDoJogo.getpoderMagicoDoHeroi());
-		System.out.println("\n \n+---------------------------+\n|Força Bruta: \n|Defesa de Armadura:   \n|Poder Mágico: "+heroiDoJogo.getpoderMagicoDoHeroi()+"\n|                       \n|Coins:                \n+---------------------------+\n");
+		System.out.println("\n \n+---------------------------+\n|"+heroiDoJogo.getnomeDoHeroi()+"\n|Força: "+heroiDoJogo.getforcaDoHeroi()+"\n|Defesa de Armadura: "+heroiDoJogo.getdefesaDoHeroi()+"\n|Poder Mágico: "+heroiDoJogo.getpoderMagicoDoHeroi()+"\n|                       \n|Coins: "+heroiDoJogo.getmoedasDoHerois()+"\n+---------------------------+\n \nArma: "+equipamentosArma.getmostraDescricao());
 	}
 
 }
