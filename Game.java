@@ -65,17 +65,10 @@ class Game  {
 				mostra.mostraArma();
 				mostra.mostrarArmadura();
 
-
-				//for(int i = 0; i < 2; i++){	
-				//System.out.println(d6.sorteiaDadoD20()+1);
-				//}
-			
-				
-
-				//String valor = "uma palavra escrita lentamente.";
-
-				//d6.lento("uma palavra escrita lentamente.");
-		
+				formata.lento("Vocẽ recebe inicialmente 15 pornto para aumentar seus atributos");
+				System.out.println();
+				formata.lento("Ao longo do jogo você vai receber mais pontos conforme avance");
+				System.out.println();
 				
 				System.out.println();
 				
@@ -462,4 +455,17 @@ class MostraInventario{
 	}
 
 
+}
+
+class ExperienciaRecebida{
+
+	Scanner entrada = new Scanner(System.in);
+	Heroi heroiDoJogo = new Heroi();
+
+	public void receberExperiencia(int maximoDePontos){
+		System.out.println("Você ainda tem "+maximoDePontos+" pontos");
+		System.out.println("Quantos pontos vocẽ quer colocar no atributo Vida: ");
+		heroiDoJogo.setvidaDoHeroi(entrada.nextInt());
+
+	}
 }
