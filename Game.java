@@ -7,57 +7,63 @@ class Game  {
 
 			public static void main(String[] args) throws InterruptedException {
 
+
 				Heroi heroiDoJogo = new Heroi();
+				//EquipamentoArma cajadoSimplorio = new EquipamentoArma();
 				MostraInventario mostra = new MostraInventario();
-
-				heroiDoJogo.recebeHeroi("m");
-
-				EquipamentoArma cajadoMelhor = new EquipamentoArma("cajado Melhor", 4);
-				cajadoMelhor.setaumentaPoderMagico(4);
-
-				mostra.mostrarAtributos();
-				mostra.mostraArma();
+				//EquipamentoArmadura armaduraSimples = new EquipamentoArmadura();
+				FormataString formata = new FormataString();
+				Imagens imagens = new Imagens();
+				Scanner entrada = new Scanner(System.in);
 
 
+				System.out.println("\n \n \n \n \n \n");
 
-
-				/*
-				Dados d6 = new Dados();
-
-				for(int i = 0; i < 70; i++){
-					System.out.println();
-				}
-
-				d6.lento("Este é um mundo onde não se mede o tempo.");
+				formata.lento("Este é um mundo onde não se mede o tempo.");
 				System.out.println();
 				Thread.sleep(300);
 
-				d6.lento("Um mundo onde a magia, a força e a coragem são suas maiores armas.");
+				formata.lento("Um mundo onde a magia, a força e a coragem são suas maiores armas.");
 				System.out.println();
 				Thread.sleep(300);
 
-				d6.lento("Um mundo além, muito além.");
+				formata.lento("Um mundo além, muito além.");
 				System.out.println();
 				Thread.sleep(300);
 
-				d6.lento("Onde os Deuses e Deusas, Herois e Vilões, Monstros e Aberrações vivem.");
+				formata.lento("Onde os Deuses e Deusas, Herois e Vilões, Monstros e Aberrações vivem.");
 				System.out.println();
 				Thread.sleep(300);
 
-				d6.lento("Mas nada se compara ao que está por vir");
+				formata.lento("Mas nada se compara ao que está por vir");
 				Thread.sleep(800);
 				System.out.print(".");
-				Thread.sleep(800);
+				Thread.sleep(900);
 				System.out.print(".");
-				Thread.sleep(800);
+				Thread.sleep(900);
 				System.out.print(".");
 				System.out.println();
 				
 				Thread.sleep(2000);
 
-				d6.nomeDoJogo();
+				imagens.nomeDoJogoImagem();
 
-				Thread.sleep(2000);
+				Thread.sleep(2500);
+
+				formata.lento("Seja bem vido a este mudo de aventuras");
+				System.out.println();
+				formata.lento("Você é adepto da Magia ou é um Guerreiro nato?");
+				System.out.println();
+				
+				imagens.guerreiroEMagoImagem();
+				System.out.println("Digite 1 para MAGO ou pressione 2 para GUERREIRO");
+				heroiDoJogo.recebeHeroi(entrada.nextInt());
+
+				
+				
+				mostra.mostrarAtributos();
+				mostra.mostraArma();
+				mostra.mostrarArmadura();
 
 
 				//for(int i = 0; i < 2; i++){	
@@ -76,7 +82,7 @@ class Game  {
 
 				//d6.guerreiro();
 				//d6.mago();
-			*/
+			
 			}
 	
 
@@ -115,57 +121,78 @@ class Game  {
 class Heroi{
 
 	private static String nomeDoHeroi;
+	private static int vidaDoHeroi;
 	private static int forcaDoHeroi;
 	private static int defesaDoHeroi;
 	private static int poderMagicoDoHeroi;
 	private static int moedasDoHerois;
-	private static EquipamentoArma armaDoHeroi;
+	//private static EquipamentoArma armaDoHeroi;
 	//private static Equipamentos armaduraDoHeroi;
 
 	
-		//Metodo para iniciar o Herois, depedendo da escolha do jogador
-		void recebeHeroi (String letra)throws InterruptedException{
-			FormataString formata = new FormataString();//objeto da classe que formata String
-			Scanner entrada = new Scanner(System.in);//salva atributos do heroi
-			//Equipamentos equipamentos = new Equipamentos();//Equipamentos do Heroi
-			
-			MostraInventario invetario = new MostraInventario();// mostra os atributos e equipamentos.
+	//Metodo para iniciar o Herois, depedendo da escolha do jogador
+	void recebeHeroi (int letra)throws InterruptedException{
+		FormataString formata = new FormataString();//objeto da classe que formata String
+		Scanner entrada = new Scanner(System.in);//salva atributos do heroi
+		//MostraInventario invetario = new MostraInventario();// mostra os atributos e equipamentos.
+		if(letra == 1){
+			formata.lento("Você escolheu o Mago.\n");
+			formata.lento("Escolha um nome para o seu Heroi: ");
+			this.nomeDoHeroi = entrada.next();
 
-			if(letra == "m" || letra == "M"){
-				formata.lento("Você escolheu o Mago.\n");
+			vidaDoHeroi = 30;
+			forcaDoHeroi = 2;
+			defesaDoHeroi = 2;
+			poderMagicoDoHeroi = 6;
+			moedasDoHerois = 0;
+
+			//Equipamentos
+			//equipamentos.cajadoSimples();
+			EquipamentoArma cajadoSimplorio = new EquipamentoArma();
+			cajadoSimplorio.setdescreveArma("Cajado Simples");
+			cajadoSimplorio.setaumentaPoderMagico(1);
+
+			EquipamentoArmadura armaduraSimples = new EquipamentoArmadura();	
+			armaduraSimples.setdescreveArmadura("Amadura Simples");
+			armaduraSimples.setaumentaArmadura(10);
+			armaduraSimples.setaumentaVida(10);
+
+			formata.lento("Sua maior força é a Magia.\n");
+			formata.lento("Seus atributos: ");
+				
+		}	
+			else if (letra == 2){
+				formata.lento("Você escolheu ser Geurreiro\n");
 				formata.lento("Escolha um nome para o seu Heroi: ");
 				this.nomeDoHeroi = entrada.next();
 
-				poderMagicoDoHeroi = 6;
-				forcaDoHeroi = 2;
+				vidaDoHeroi = 30;
+				forcaDoHeroi = 6;
 				defesaDoHeroi = 2;
+				poderMagicoDoHeroi = 2;
 				moedasDoHerois = 0;
-				EquipamentoArma cajadoSimplorio = new EquipamentoArma("Cajado Simples",1);
 
 				//Equipamentos
 				//equipamentos.cajadoSimples();
-				cajadoSimplorio.setaumentaPoderMagico(1);
-				//cajadoSimplorio.setdescreveArma("Cajado Simples");
-				cajadoSimplorio.setaumentaArmadura(10);
-
-				//System.out.println("Poder do cajado: "+cajadoSimplorio.getaumentaPoderMagico());
-
-				formata.lento("Sua maior força é a Magia.\n");
-				formata.lento("Seus atributos: ");
-				invetario.mostrarAtributos();
-				invetario.mostraArma();
+				EquipamentoArma machadoSimplorio = new EquipamentoArma();
+				machadoSimplorio.setdescreveArma("Machado Simples");
+				machadoSimplorio.setaumentaForca(1);
 				
-			}	
-				else if (letra == "g" || letra == "G"){
-					formata.lento("Você escolheu ser Geurreiro\n");
+				EquipamentoArmadura armaduraSimples = new EquipamentoArmadura();
+				armaduraSimples.setdescreveArmadura("Amadura Simples");
+				armaduraSimples.setaumentaArmadura(10);
+				armaduraSimples.setaumentaVida(10);
+				formata.lento("Use a força Bruta para derrubar seus inimigos.\n");
+				formata.lento("Seus atributos: ");
+				
+			}
+				else{
+				System.out.println("Nada");
+				//heroiDoJogo.recebeHeroi(entrada.next());
 					
 				}
-					else{
-						formata.lento("Volta seu feio\n");
-						
-					}
-		
-		}
+	
+	}
 
 		//GET para mostrar atributos e SET para mudar os atributos
 		
@@ -204,6 +231,14 @@ class Heroi{
 		}
 		public int getmoedasDoHerois(){
 			return this.moedasDoHerois;
+		}
+
+		//void seta para aumentar e recuperar vida get int para mostra a vida
+		public void setvidaDoHeroi(int recebe){
+			this.vidaDoHeroi += recebe;
+		}
+		public int getvidaDoHeroi(){
+			return this.vidaDoHeroi;
 		}
 }
 
@@ -258,17 +293,17 @@ class Imagens{
 class EquipamentoArma{
 
 	private static int aumentaPoderMagico;
-	private  int aumentaForca;
-	private  int aumentaArmadura;
+	private static int aumentaForca;
+	private static int aumentaArmadura;
 	private static String descreveArma;
 
 	EquipamentoArma(){
 
 	}
 
-	EquipamentoArma(String descreveArma, int aumentaPoderMagico){
+	EquipamentoArma(String descreveArma){
 		this.descreveArma = descreveArma;
-		this.aumentaArmadura= aumentaPoderMagico;
+
 	}
 
 	Heroi heroiDoJogo = new Heroi();
@@ -314,12 +349,13 @@ class EquipamentoArma{
 	}
 
 }
-
+//#armadura
 class EquipamentoArmadura{
 
 	private static int aumentaPoderMagico;
 	private static int aumentaForca;
 	private static int aumentaArmadura;
+	private static int aumentaVida;
 	private static String descreveArmadura;
 
 	Heroi heroiDoJogo = new Heroi();
@@ -337,6 +373,7 @@ class EquipamentoArmadura{
 
 	//void set para guardar poder mágico e int get para mostrar
 	void setaumentaPoderMagico(int aumentaQuanto){
+		this.aumentaPoderMagico = aumentaQuanto;
 		heroiDoJogo.setpoderMagicoDoHeroi(aumentaQuanto);
 	}
 	int getaumentaPoderMagico(){
@@ -345,18 +382,29 @@ class EquipamentoArmadura{
 
 	//void set para força e int get para mostrar
 	void setaumentaForca(int aumentaQuanto){
-		this.aumentaForca += aumentaQuanto;
+		this.aumentaForca = aumentaQuanto;
+		heroiDoJogo.setforcaDoHeroi(aumentaQuanto);
 	}
 	int getaumentaForca(){
 		return this.aumentaForca;
 	}
 
-	//void ser para aumendar armadura e int get para mostrar
+	//void set para aumendar armadura e int get para mostrar
 	void setaumentaArmadura(int aumentaQuanto){
-		this.aumentaArmadura += aumentaQuanto;
+		this.aumentaArmadura = aumentaQuanto;
+		heroiDoJogo.setdefesaDoHeroi(aumentaQuanto);
 	}
 	int getaumentaArmadura(){
 		return this.aumentaArmadura;
+	}
+
+	//void set para aumentar a vida
+	void setaumentaVida(int aumentaQuanto){
+		this.aumentaVida = aumentaQuanto;
+		heroiDoJogo.setvidaDoHeroi(aumentaQuanto);
+	}
+	int getaumentaVida(){
+		return this.aumentaVida;
 	}
 }
 
@@ -368,12 +416,14 @@ class MostraInventario{
 
 	//Equipamentos equipamentos = new Equipamentos();//Equipamentos do Heroi
 	EquipamentoArma equipamentosArma = new EquipamentoArma();
+	EquipamentoArmadura equipamentoArmadura = new EquipamentoArmadura();
 	Heroi heroiDoJogo = new Heroi();
+	//MostraInventario tudo = new MostraInventario();
 
 
 	public void mostrarAtributos(){
 		//System.out.println(heroiDoJogo.getpoderMagicoDoHeroi());
-		System.out.println("\n \n+---------------------------+\n|"+"*** "+heroiDoJogo.getnomeDoHeroi()+" ***"+"\n|Força: "+heroiDoJogo.getforcaDoHeroi()+"\n|Defesa de Armadura: "+heroiDoJogo.getdefesaDoHeroi()+"\n|Poder Mágico: "+heroiDoJogo.getpoderMagicoDoHeroi()+"\n|                       \n|Coins: "+heroiDoJogo.getmoedasDoHerois()+"\n+---------------------------+");
+		System.out.println("\n \n+---------------------------+\n|"+"*** "+heroiDoJogo.getnomeDoHeroi()+" ***"+"\n|Pontos de vida do Herois: "+heroiDoJogo.getvidaDoHeroi()+"\n|Força: "+heroiDoJogo.getforcaDoHeroi()+"\n|Defesa de Armadura: "+heroiDoJogo.getdefesaDoHeroi()+"\n|Poder Mágico: "+heroiDoJogo.getpoderMagicoDoHeroi()+"\n|                       \n|Coins: "+heroiDoJogo.getmoedasDoHerois()+"\n+---------------------------+");
 	}
 
 	public void mostraArma(){
@@ -392,6 +442,24 @@ class MostraInventario{
 		System.out.print("+---------------------------+\n");
 	}
 
+	public void mostrarArmadura(){
+		System.out.println("|*** Armadura Equipada ***");
+		System.out.println("|"+equipamentoArmadura.getmostraDescricao());
+
+		if(equipamentoArmadura.getaumentaForca() > 0){
+			System.out.println("|Armadura aumenta a força em: "+equipamentoArmadura.getaumentaForca());
+		}
+		if(equipamentoArmadura.getaumentaPoderMagico() > 0){
+			System.out.println("|Armadura aumenta o poder Mágico em: "+equipamentoArmadura.getaumentaPoderMagico());
+		}
+		if(equipamentoArmadura.getaumentaVida() > 0){
+			System.out.println("|Armadura aumenta a vida: "+equipamentoArmadura.getaumentaVida());
+		}
+		if(equipamentoArmadura.getaumentaArmadura() > 0){
+			System.out.println("|Armadura Defesa em: "+equipamentoArmadura.getaumentaArmadura());
+		}
+		System.out.print("+---------------------------+\n");
+	}
 
 
 }
