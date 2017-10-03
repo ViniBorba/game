@@ -15,6 +15,7 @@ class Game  {
 				FormataString formata = new FormataString();
 				Imagens imagens = new Imagens();
 				Scanner entrada = new Scanner(System.in);
+				ExperienciaRecebida recebeExperiencia = new ExperienciaRecebida();
 
 
 				System.out.println("\n \n \n \n \n \n");
@@ -65,11 +66,27 @@ class Game  {
 				mostra.mostraArma();
 				mostra.mostrarArmadura();
 
-				formata.lento("Vocẽ recebe inicialmente 15 pornto para aumentar seus atributos");
+				Thread.sleep(2000);
+
+				formata.lento("Você recebe inicialmente 15 pornto para aumentar seus atributos");
 				System.out.println();
 				formata.lento("Ao longo do jogo você vai receber mais pontos conforme avance");
 				System.out.println();
 				
+				recebeExperiencia.receberExperiencia(15);
+
+				mostra.mostrarAtributos();
+				mostra.mostraArma();
+				mostra.mostrarArmadura();
+
+				//#começa #começaaventura #aventura
+
+				Thread.sleep(2000);
+				System.out.println("\n \n****** INÍCIO DA AVENTURA ******\n \n");
+				Thread.sleep(2000);
+
+
+
 				System.out.println();
 				
 
@@ -247,7 +264,7 @@ class FormataString{
 
 		for(char c: valor.toCharArray()){
 					System.out.print(c);
-					Thread.sleep(125);
+					Thread.sleep(110);
 				}
 	}
 
@@ -416,7 +433,7 @@ class MostraInventario{
 
 	public void mostrarAtributos(){
 		//System.out.println(heroiDoJogo.getpoderMagicoDoHeroi());
-		System.out.println("\n \n+---------------------------+\n|"+"*** "+heroiDoJogo.getnomeDoHeroi()+" ***"+"\n|Pontos de vida do Herois: "+heroiDoJogo.getvidaDoHeroi()+"\n|Força: "+heroiDoJogo.getforcaDoHeroi()+"\n|Defesa de Armadura: "+heroiDoJogo.getdefesaDoHeroi()+"\n|Poder Mágico: "+heroiDoJogo.getpoderMagicoDoHeroi()+"\n|                       \n|Coins: "+heroiDoJogo.getmoedasDoHerois()+"\n+---------------------------+");
+		System.out.println("\n \n+---------------------------+\n|"+"*** "+heroiDoJogo.getnomeDoHeroi()+" ***"+"\n|Pontos de vida do Heroi: "+heroiDoJogo.getvidaDoHeroi()+"\n|Força: "+heroiDoJogo.getforcaDoHeroi()+"\n|Defesa: "+heroiDoJogo.getdefesaDoHeroi()+"\n|Poder Mágico: "+heroiDoJogo.getpoderMagicoDoHeroi()+"\n|                       \n|Coins: "+heroiDoJogo.getmoedasDoHerois()+"\n+---------------------------+");
 	}
 
 	public void mostraArma(){
@@ -457,15 +474,66 @@ class MostraInventario{
 
 }
 
+/*
+#experiencia
+*/
+
 class ExperienciaRecebida{
 
 	Scanner entrada = new Scanner(System.in);
 	Heroi heroiDoJogo = new Heroi();
 
 	public void receberExperiencia(int maximoDePontos){
-		System.out.println("Você ainda tem "+maximoDePontos+" pontos");
-		System.out.println("Quantos pontos vocẽ quer colocar no atributo Vida: ");
-		heroiDoJogo.setvidaDoHeroi(entrada.nextInt());
+
+
+
+			int auxiliarGlobal;
+			int auxiliarDeVida;
+			int auxiliarDeDefesa;
+			int auxiliarDeForca;
+			int auxiliarMagia;
+
+			auxiliarGlobal = maximoDePontos;	
+
+		do{ 
+
+			maximoDePontos = auxiliarGlobal;
+			System.out.println("\n \n -----------------------------------------******************-----------------------------------------");
+			System.out.println("Você deve distribuir "+maximoDePontos+" de pontos entre os seus atributos: Vida, Defesa, força e Magia");
+			System.out.println("Você ainda tem "+maximoDePontos+" pontos");
+
+			System.out.println("Quantos pontos você quer colocar no atributo Vida: ");
+			auxiliarDeVida = entrada.nextInt();
+			//heroiDoJogo.setvidaDoHeroi(auxiliar);
+			maximoDePontos = maximoDePontos - auxiliarDeVida;
+			System.out.println("Ainda resta:  "+maximoDePontos+" pontos");
+
+			System.out.println("Quantos pontos você quer colocar no atributo Defesa: ");
+			auxiliarDeDefesa = entrada.nextInt();
+			//heroiDoJogo.setdefesaDoHeroi(auxiliar);
+			maximoDePontos = maximoDePontos - auxiliarDeDefesa;
+			System.out.println("Ainda resta:  "+maximoDePontos+" pontos");
+
+			System.out.println("Quantos pontos você quer colocar no atributo Força: ");
+			auxiliarDeForca = entrada.nextInt();
+			//heroiDoJogo.setdefesaDoHeroi(auxiliar);
+			maximoDePontos = maximoDePontos - auxiliarDeForca;
+			System.out.println("Ainda resta:  "+maximoDePontos+" pontos");
+
+			System.out.println("Quantos pontos você quer colocar no atributo Magia: ");
+			auxiliarMagia = entrada.nextInt();
+			//heroiDoJogo.setdefesaDoHeroi(auxiliar);
+			maximoDePontos = maximoDePontos - auxiliarMagia;
+			System.out.println("Ainda resta:  "+maximoDePontos+" pontos");
+
+			//auxiliarGlobal = maximoDePontos;
+		}
+		while(maximoDePontos != 0);
+
+		heroiDoJogo.setvidaDoHeroi(auxiliarDeVida);
+		heroiDoJogo.setdefesaDoHeroi(auxiliarDeDefesa);
+		heroiDoJogo.setforcaDoHeroi(auxiliarDeForca);
+		heroiDoJogo.setpoderMagicoDoHeroi(auxiliarMagia);
 
 	}
 }

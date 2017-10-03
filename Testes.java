@@ -1,67 +1,85 @@
 import java.util.Random;
+import java.util.Scanner;
 
-class Dados  {
+class Game  {
 
 
 
 			public static void main(String[] args) throws InterruptedException {
 
+
 				Heroi heroiDoJogo = new Heroi();
+				//EquipamentoArma cajadoSimplorio = new EquipamentoArma();
+				MostraInventario mostra = new MostraInventario();
+				//EquipamentoArmadura armaduraSimples = new EquipamentoArmadura();
+				FormataString formata = new FormataString();
+				Imagens imagens = new Imagens();
+				Scanner entrada = new Scanner(System.in);
 
-				heroiDoJogo.recebeLetra("g");
+				ExperienciaRecebida recebeExperiencia = new ExperienciaRecebida();
+
+				mostra.mostrarAtributos();
+
+				recebeExperiencia.receberExperiencia(10);
+
+				mostra.mostrarAtributos();
 
 
-				/*
-				Dados d6 = new Dados();
 
-				for(int i = 0; i < 70; i++){
-					System.out.println();
-				}
 
-				d6.lento("Este é um mundo onde não se mede o tempo.");
+/*
+				System.out.println("\n \n \n \n \n \n");
+
+				formata.lento("Este é um mundo onde não se mede o tempo.");
 				System.out.println();
 				Thread.sleep(300);
 
-				d6.lento("Um mundo onde a magia, a força e a coragem são suas maiores armas.");
+				formata.lento("Um mundo onde a magia, a força e a coragem são suas maiores armas.");
 				System.out.println();
 				Thread.sleep(300);
 
-				d6.lento("Um mundo além, muito além.");
+				formata.lento("Um mundo além, muito além.");
 				System.out.println();
 				Thread.sleep(300);
 
-				d6.lento("Onde os Deuses e Deusas, Herois e Vilões, Monstros e Aberrações vivem.");
+				formata.lento("Onde os Deuses e Deusas, Herois e Vilões, Monstros e Aberrações vivem.");
 				System.out.println();
 				Thread.sleep(300);
 
-				d6.lento("Mas nada se compara ao que está por vir");
+				formata.lento("Mas nada se compara ao que está por vir");
 				Thread.sleep(800);
 				System.out.print(".");
-				Thread.sleep(800);
+				Thread.sleep(900);
 				System.out.print(".");
-				Thread.sleep(800);
+				Thread.sleep(900);
 				System.out.print(".");
 				System.out.println();
 				
 				Thread.sleep(2000);
 
-				d6.nomeDoJogo();
+				imagens.nomeDoJogoImagem();
 
-				Thread.sleep(2000);
+				Thread.sleep(2500);
 
-				//Mostra mago e guerreiro juntos
-				System.out.println("                 *8           |                ..            \n                8@#           |           #   .8@@           \n               ^8@@           |            #  .##8@ #        \n              ^88#&*          |             #.#88@@88        \n            *&&8@@$88^        |            . #888@@@888.     \n     888     8@$@@$$&         |           88..@888@@8@@8.    \n    8|8$8    @8&8|$8&&        |          .88#.#888@8@@88#    \n    $& 8&    8@|$8#8          |          8@@@8888#8@@@@@8    \n    @88      &|8##$8@         |          #8@@8888888@@@@8    \n     8@$     ^@$88$@8&        |          #888888888@#.@8@8   \n     @@8    &8888$@8#^        |        .##88@@@@@@8@. 8@@@   \n     ^$    8@$|$$|#@@8        |        8@@@8@@@@@@@@8  @@@   \n      @     ^$$^8@88$$        |        8@8@@8@@8@@8@8  #@@   \n     &@^&8^8@|#&@8888#&       |        @@@8@@@@@@@@@@# #@@   \n     8@@8@@&$|$@|8&888        |        @@8#@@@@@@@@@@8 #@@   \n      @&    $|$$||&88#        |        888@@@@@@@@@@@@##88   \n      8     $$$$@|8^8#        |        8#.@@@@@@@@@8@@@.#.   \n      &    8#@8$$$|&8#        |       ##  8@@@@@@@@@@@@8     \n      8    @8@8@$8@8&88       |       8   @@@@@@@@@@8@@8     \n      8    @$88@$&&@&8@       |   ##.88   8@@88@@@@@@@@8     \n      8    $$&8#|8 #8&@@      |   .@@8.#8 88@@8@88@@@@@      \n      8^   #|&8#||^8@8#       |    #@@ 8@ 8@@@@88@@@@@@      \n      8^  &8|888@|88@888      |    8@@8@@. @@@@@@8@8@@@      \n      8^  8#|8^8@|@&8@8@      |    # @@@@. 8@@88@@@.8@@      \n      8& 88#&88$@@88@@888     |      8@@8  .@@. .88  @@.     \n      88 8#@& @$^  8#@8#@^    |     8@@8.  .@@      .@@8     \n      #8    & @$    @|#&@^    |     #@8    @@@.      8@@     \n      @&     $$$^   8$@       |           #@@@       8@@.    \n      &&  ^&8@$$^   @@@       |          #888#       #@@#    \n       ^  8@@||$^   8#@       |         #^^@@@      8@@@@#   \n          ^888&    88@@       |                              \n                  8@@$|       |                              \n                   888^       |                              \n");
-
-				//for(int i = 0; i < 2; i++){	
-				//System.out.println(d6.sorteiaDadoD20()+1);
-				//}
-			
+				formata.lento("Seja bem vido a este mudo de aventuras");
+				System.out.println();
+				formata.lento("Você é adepto da Magia ou é um Guerreiro nato?");
+				System.out.println();
 				
+				imagens.guerreiroEMagoImagem();
+				System.out.println("Digite 1 para MAGO ou pressione 2 para GUERREIRO");
+				heroiDoJogo.recebeHeroi(entrada.nextInt());
 
-				//String valor = "uma palavra escrita lentamente.";
+				
+				
+				mostra.mostrarAtributos();
+				mostra.mostraArma();
+				mostra.mostrarArmadura();
 
-				//d6.lento("uma palavra escrita lentamente.");
-		
+				formata.lento("Vocẽ recebe inicialmente 15 pornto para aumentar seus atributos");
+				System.out.println();
+				formata.lento("Ao longo do jogo você vai receber mais pontos conforme avance");
+				System.out.println();
 				
 				System.out.println();
 				
@@ -72,14 +90,7 @@ class Dados  {
 			}
 	
 
-	//Metodo que pega uma frase e escreve ela lentamente.
-	void lento(String valor)throws InterruptedException{
 
-		for(char c: valor.toCharArray()){
-					System.out.print(c);
-					Thread.sleep(125);
-				}
-	}
 
 
 	//int é o objeto do array dado6
@@ -104,52 +115,418 @@ class Dados  {
 		System.out.println("Olá");
 	}
 
-
-	void mago(){
-		System.out.println("                 *8           \n                8@#           \n               ^8@@           \n              ^88#&*          \n            *&&8@@$88^        \n     888     8@$@@$$&         \n    8|8$8    @8&8|$8&&        \n    $& 8&    8@|$8#8          \n    @88      &|8##$8@         \n     8@$     ^@$88$@8&        \n     @@8    &8888$@8#^        \n     ^$    8@$|$$|#@@8        \n      @     ^$$^8@88$$        \n     &@^&8^8@|#&@8888#&       \n     8@@8@@&$|$@|8&888        \n      @&    $|$$||&88#        \n      8     $$$$@|8^8#        \n      &    8#@8$$$|&8#        \n      8    @8@8@$8@8&88       \n      8    @$88@$&&@&8@       \n      8    $$&8#|8 #8&@@      \n      8^   #|&8#||^8@8#       \n      8^  &8|888@|88@888      \n      8^  8#|8^8@|@&8@8@      \n      8& 88#&88$@@88@@888     \n      88 8#@& @$^  8#@8#@^    \n      #8    & @$    @|#&@^    \n      @&     $$$^   8$@       \n      &&  ^&8@$$^   @@@       \n       ^  8@@||$^   8#@       \n          ^888&    88@@       \n                  8@@$|       \n                   888^       \n");
-	}
-
-	void guerreiro(){
-		System.out.println("                ..            \n           #   .8@@           \n            #  .##8@ #        \n             #.#88@@88        \n            . #888@@@888.     \n           88..@888@@8@@8.    \n          .88#.#888@8@@88#    \n          8@@@8888#8@@@@@8    \n          #8@@8888888@@@@8    \n          #888888888@#.@8@8   \n        .##88@@@@@@8@. 8@@@   \n        8@@@8@@@@@@@@8  @@@   \n        8@8@@8@@8@@8@8  #@@   \n        @@@8@@@@@@@@@@# #@@   \n        @@8#@@@@@@@@@@8 #@@   \n        888@@@@@@@@@@@@##88   \n        8#.@@@@@@@@@8@@@.#.   \n       ##  8@@@@@@@@@@@@8     \n       8   @@@@@@@@@@8@@8     \n   ##.88   8@@88@@@@@@@@8     \n   .@@8.#8 88@@8@88@@@@@      \n    #@@ 8@ 8@@@@88@@@@@@      \n    8@@8@@. @@@@@@8@8@@@      \n    # @@@@. 8@@88@@@.8@@      \n      8@@8  .@@. .88  @@.     \n     8@@8.  .@@      .@@8     \n     #@8    @@@.      8@@     \n           #@@@       8@@.    \n          #888#       #@@#    \n                              \n");
-	}
-
-	void nomeDoJogo(){
-		System.out.println("                                                                    \n ____      ____  ____  _________________      _____        ______   \n|    |    |    ||    |/                 \\ ___|\\    \\   ___|\\     \\  \n|    |    |    ||    |\\______     ______//    /\\    \\ |     \\     \\ \n|    |    |    ||    |   \\( /    /  )/  |    |  |    ||     ,_____/|\n|    |    |    ||    |    ' |   |   '   |    |__|    ||     \\--'\\_|/\n|    |    |    ||    |      |   |       |    .--.    ||     /___/|  \n|\\    \\  /    /||    |     /   //       |    |  |    ||     \\____|\\ \n| \\ ___\\/___ / ||____|    /___//        |____|  |____||____ '     /|\n \\ |   ||   | / |    |   |`   |         |    |  |    ||    /_____/ |\n  \\|___||___|/  |____|   |____|         |____|  |____||____|     | /\n    \\(    )/      \\(       \\(             \\(      )/    \\( |_____|/ \n     '    '        '        '              '      '      '    )/    \n....................................................................\n                +  DOMINUS  +  VITAE   +  MORTEM  +                 \n....................................................................\n");
-	}
-
-
-
 }
 
 /*
 #heroi
 */
 
+
 class Heroi{
 
-	private String nomeDoHeroi;
-	private int forcaDoHeroi;
-	private int defesaDoHeroi;
-	private int poderMagicoDoHeroi;
+	private static String nomeDoHeroi;
+	private static int vidaDoHeroi;
+	private static int forcaDoHeroi;
+	private static int defesaDoHeroi;
+	private static int poderMagicoDoHeroi;
+	private static int moedasDoHerois;
+	//private static EquipamentoArma armaDoHeroi;
+	//private static Equipamentos armaduraDoHeroi;
 
 	
-		void recebeLetra (String letra){
-			if(letra == "m" || letra == "M"){
+	//Metodo para iniciar o Herois, depedendo da escolha do jogador
+	void recebeHeroi (int letra)throws InterruptedException{
+		FormataString formata = new FormataString();//objeto da classe que formata String
+		Scanner entrada = new Scanner(System.in);//salva atributos do heroi
+		//MostraInventario invetario = new MostraInventario();// mostra os atributos e equipamentos.
+		if(letra == 1){
+			formata.lento("Você escolheu o Mago.\n");
+			formata.lento("Escolha um nome para o seu Heroi: ");
+			this.nomeDoHeroi = entrada.next();
 
+			vidaDoHeroi = 30;
+			forcaDoHeroi = 2;
+			defesaDoHeroi = 2;
+			poderMagicoDoHeroi = 6;
+			moedasDoHerois = 0;
 
+			//Equipamentos
+			//equipamentos.cajadoSimples();
+			EquipamentoArma cajadoSimplorio = new EquipamentoArma();
+			cajadoSimplorio.setdescreveArma("Cajado Simples");
+			cajadoSimplorio.setaumentaPoderMagico(1);
 
+			EquipamentoArmadura armaduraSimples = new EquipamentoArmadura();	
+			armaduraSimples.setdescreveArmadura("Amadura Simples");
+			armaduraSimples.setaumentaArmadura(10);
+			armaduraSimples.setaumentaVida(10);
 
-				System.out.println("Mago");
-				//return;
+			formata.lento("Sua maior força é a Magia.\n");
+			formata.lento("Seus atributos: ");
+				
+		}	
+			else if (letra == 2){
+				formata.lento("Você escolheu ser Geurreiro\n");
+				formata.lento("Escolha um nome para o seu Heroi: ");
+				this.nomeDoHeroi = entrada.next();
+
+				vidaDoHeroi = 30;
+				forcaDoHeroi = 6;
+				defesaDoHeroi = 2;
+				poderMagicoDoHeroi = 2;
+				moedasDoHerois = 0;
+
+				//Equipamentos
+				//equipamentos.cajadoSimples();
+				EquipamentoArma machadoSimplorio = new EquipamentoArma();
+				machadoSimplorio.setdescreveArma("Machado Simples");
+				machadoSimplorio.setaumentaForca(1);
+				
+				EquipamentoArmadura armaduraSimples = new EquipamentoArmadura();
+				armaduraSimples.setdescreveArmadura("Amadura Simples");
+				armaduraSimples.setaumentaArmadura(10);
+				armaduraSimples.setaumentaVida(10);
+				formata.lento("Use a força Bruta para derrubar seus inimigos.\n");
+				formata.lento("Seus atributos: ");
+				
 			}
-				else if (letra == "g" || letra == "G"){
-					System.out.println("Guerreiro");
+				else{
+				System.out.println("Nada");
+				//heroiDoJogo.recebeHeroi(entrada.next());
 					
 				}
-					else{
-						System.out.println("Volta");
-						
-					}
+	
+	}
+
+		//GET para mostrar atributos e SET para mudar os atributos
 		
+		//Get mostra nome do Heroi
+		public String getnomeDoHeroi(){
+			return this.nomeDoHeroi;
 		}
+
+		//set voi para mudar a força e get int para mostrar retornar a força
+		public void setforcaDoHeroi(int recebe){
+			this.forcaDoHeroi += recebe;
+		}
+		public int getforcaDoHeroi(){
+			return this.forcaDoHeroi;
+		}
+
+		//set void para mudar a defesa e get int para mostrar a defesa
+		public void setdefesaDoHeroi(int recebe){
+			this.defesaDoHeroi += recebe;
+		}
+		public int getdefesaDoHeroi(){
+			return this.defesaDoHeroi;
+		}
+
+		//set void para mudar o porder mágico e get int para mostrar
+		public void setpoderMagicoDoHeroi(int recebe){
+			this.poderMagicoDoHeroi += recebe;
+		}
+		public int getpoderMagicoDoHeroi(){
+			return this.poderMagicoDoHeroi;
+		}
+
+		//void seta para receber valor de moedas get int para mostrar quantas moedas tem
+		public void setmoedasDoHeroi(int recebe){
+			this.moedasDoHerois += recebe;
+		}
+		public int getmoedasDoHerois(){
+			return this.moedasDoHerois;
+		}
+
+		//void seta para aumentar e recuperar vida get int para mostra a vida
+		public void setvidaDoHeroi(int recebe){
+			this.vidaDoHeroi += recebe;
+		}
+		public int getvidaDoHeroi(){
+			return this.vidaDoHeroi;
+		}
+}
+
+
+/*
+#formata #lento #formatastring
+*/
+
+class FormataString{
+
+	//Metodo que pega uma frase e escreve ela lentamente.
+	public void lento(String valor)throws InterruptedException{
+
+		for(char c: valor.toCharArray()){
+					System.out.print(c);
+					Thread.sleep(125);
+				}
+	}
+
+
+}
+
+/*
+#imagem
+*/
+class Imagens{
+
+		//Método para mostrar a imagem do nome do Jogo
+	void nomeDoJogoImagem(){
+		System.out.println("                                                                    \n ____      ____  ____  _________________      _____        ______   \n|    |    |    ||    |/                 \\ ___|\\    \\   ___|\\     \\  \n|    |    |    ||    |\\______     ______//    /\\    \\ |     \\     \\ \n|    |    |    ||    |   \\( /    /  )/  |    |  |    ||     ,_____/|\n|    |    |    ||    |    ' |   |   '   |    |__|    ||     \\--'\\_|/\n|    |    |    ||    |      |   |       |    .--.    ||     /___/|  \n|\\    \\  /    /||    |     /   //       |    |  |    ||     \\____|\\ \n| \\ ___\\/___ / ||____|    /___//        |____|  |____||____ '     /|\n \\ |   ||   | / |    |   |`   |         |    |  |    ||    /_____/ |\n  \\|___||___|/  |____|   |____|         |____|  |____||____|     | /\n    \\(    )/      \\(       \\(             \\(      )/    \\( |_____|/ \n     '    '        '        '              '      '      '    )/    \n....................................................................\n                +  DOMINUS  +  VITAE   +  MORTEM  +                 \n....................................................................\n");
+	}
+
+	//Metodo para mostrar a imagem do Mago
+	void magoImagem(){
+		System.out.println("                 *8           \n                8@#           \n               ^8@@           \n              ^88#&*          \n            *&&8@@$88^        \n     888     8@$@@$$&         \n    8|8$8    @8&8|$8&&        \n    $& 8&    8@|$8#8          \n    @88      &|8##$8@         \n     8@$     ^@$88$@8&        \n     @@8    &8888$@8#^        \n     ^$    8@$|$$|#@@8        \n      @     ^$$^8@88$$        \n     &@^&8^8@|#&@8888#&       \n     8@@8@@&$|$@|8&888        \n      @&    $|$$||&88#        \n      8     $$$$@|8^8#        \n      &    8#@8$$$|&8#        \n      8    @8@8@$8@8&88       \n      8    @$88@$&&@&8@       \n      8    $$&8#|8 #8&@@      \n      8^   #|&8#||^8@8#       \n      8^  &8|888@|88@888      \n      8^  8#|8^8@|@&8@8@      \n      8& 88#&88$@@88@@888     \n      88 8#@& @$^  8#@8#@^    \n      #8    & @$    @|#&@^    \n      @&     $$$^   8$@       \n      &&  ^&8@$$^   @@@       \n       ^  8@@||$^   8#@       \n          ^888&    88@@       \n                  8@@$|       \n                   888^       \n");
+	}
+
+	//Metodo para mostrar a imagem do Guerreiro
+	void guerreiro(){
+		System.out.println("                ..            \n           #   .8@@           \n            #  .##8@ #        \n             #.#88@@88        \n            . #888@@@888.     \n           88..@888@@8@@8.    \n          .88#.#888@8@@88#    \n          8@@@8888#8@@@@@8    \n          #8@@8888888@@@@8    \n          #888888888@#.@8@8   \n        .##88@@@@@@8@. 8@@@   \n        8@@@8@@@@@@@@8  @@@   \n        8@8@@8@@8@@8@8  #@@   \n        @@@8@@@@@@@@@@# #@@   \n        @@8#@@@@@@@@@@8 #@@   \n        888@@@@@@@@@@@@##88   \n        8#.@@@@@@@@@8@@@.#.   \n       ##  8@@@@@@@@@@@@8     \n       8   @@@@@@@@@@8@@8     \n   ##.88   8@@88@@@@@@@@8     \n   .@@8.#8 88@@8@88@@@@@      \n    #@@ 8@ 8@@@@88@@@@@@      \n    8@@8@@. @@@@@@8@8@@@      \n    # @@@@. 8@@88@@@.8@@      \n      8@@8  .@@. .88  @@.     \n     8@@8.  .@@      .@@8     \n     #@8    @@@.      8@@     \n           #@@@       8@@.    \n          #888#       #@@#    \n                              \n");
+	}
+
+	//Mostra mago e guerreiro juntos
+	void guerreiroEMagoImagem(){
+				System.out.println("                 *8           |                ..            \n                8@#           |           #   .8@@           \n               ^8@@           |            #  .##8@ #        \n              ^88#&*          |             #.#88@@88        \n            *&&8@@$88^        |            . #888@@@888.     \n     888     8@$@@$$&         |           88..@888@@8@@8.    \n    8|8$8    @8&8|$8&&        |          .88#.#888@8@@88#    \n    $& 8&    8@|$8#8          |          8@@@8888#8@@@@@8    \n    @88      &|8##$8@         |          #8@@8888888@@@@8    \n     8@$     ^@$88$@8&        |          #888888888@#.@8@8   \n     @@8    &8888$@8#^        |        .##88@@@@@@8@. 8@@@   \n     ^$    8@$|$$|#@@8        |        8@@@8@@@@@@@@8  @@@   \n      @     ^$$^8@88$$        |        8@8@@8@@8@@8@8  #@@   \n     &@^&8^8@|#&@8888#&       |        @@@8@@@@@@@@@@# #@@   \n     8@@8@@&$|$@|8&888        |        @@8#@@@@@@@@@@8 #@@   \n      @&    $|$$||&88#        |        888@@@@@@@@@@@@##88   \n      8     $$$$@|8^8#        |        8#.@@@@@@@@@8@@@.#.   \n      &    8#@8$$$|&8#        |       ##  8@@@@@@@@@@@@8     \n      8    @8@8@$8@8&88       |       8   @@@@@@@@@@8@@8     \n      8    @$88@$&&@&8@       |   ##.88   8@@88@@@@@@@@8     \n      8    $$&8#|8 #8&@@      |   .@@8.#8 88@@8@88@@@@@      \n      8^   #|&8#||^8@8#       |    #@@ 8@ 8@@@@88@@@@@@      \n      8^  &8|888@|88@888      |    8@@8@@. @@@@@@8@8@@@      \n      8^  8#|8^8@|@&8@8@      |    # @@@@. 8@@88@@@.8@@      \n      8& 88#&88$@@88@@888     |      8@@8  .@@. .88  @@.     \n      88 8#@& @$^  8#@8#@^    |     8@@8.  .@@      .@@8     \n      #8    & @$    @|#&@^    |     #@8    @@@.      8@@     \n      @&     $$$^   8$@       |           #@@@       8@@.    \n      &&  ^&8@$$^   @@@       |          #888#       #@@#    \n       ^  8@@||$^   8#@       |         #^^@@@      8@@@@#   \n          ^888&    88@@       |                              \n                  8@@$|       |                              \n                   888^       |                              \n");
+	}
+}
+
+/*
+#armas #equipamentos
+*/
+class EquipamentoArma{
+
+	private static int aumentaPoderMagico;
+	private static int aumentaForca;
+	private static int aumentaArmadura;
+	private static String descreveArma;
+
+	EquipamentoArma(){
+
+	}
+
+	EquipamentoArma(String descreveArma){
+		this.descreveArma = descreveArma;
+
+	}
+
+	Heroi heroiDoJogo = new Heroi();
+
+	//Se arma tem poderes ela aumenta um ou mais atributos do heroi
+	//Na criação do objeto EquipamentoArma vou passar os parametros da arma
+
+
+
+	//Arma aumenta o poder mágico do heroi
+	void setaumentaPoderMagico(int aumentaQuanto){
+		this.aumentaPoderMagico = aumentaQuanto;
+		heroiDoJogo.setpoderMagicoDoHeroi(aumentaQuanto);
+	}
+	int getaumentaPoderMagico(){
+		return this.aumentaPoderMagico;
+	}
+
+	//Arma aumenta a força do heroi do jogo 
+	void setaumentaForca(int aumentaQuanto){
+		this.aumentaForca = aumentaQuanto;
+		heroiDoJogo.setforcaDoHeroi(aumentaQuanto);
+	}
+	int getaumentaForca(){
+		return this.aumentaForca;
+	}
+
+	//void set para aumentar a armadura e get para mostrar
+	void setaumentaArmadura(int aumentaQuanto){
+		this.aumentaArmadura = aumentaQuanto;
+		this.aumentaArmadura += aumentaQuanto;
+	}
+	int getaumentaArmadura(){
+		return this.aumentaArmadura;
+	}
+
+	//Apensa guarda a secreição da Arma, para mostrar no invetário.
+	void setdescreveArma(String descricao){
+		this.descreveArma = descricao;
+	}
+	String getmostraDescricao(){
+		return descreveArma;
+	}
+
+}
+//#armadura
+class EquipamentoArmadura{
+
+	private static int aumentaPoderMagico;
+	private static int aumentaForca;
+	private static int aumentaArmadura;
+	private static int aumentaVida;
+	private static String descreveArmadura;
+
+	Heroi heroiDoJogo = new Heroi();
+
+	//Se armadura tem poderes ela aumenta um ou mais atributos do heroi
+	//Na criação do objeto EquipamentoArmadura vou passar os parametros da armadura
+
+	//Apensa guarda a secreição da Armadura, para mostrar no invetário.
+	void setdescreveArmadura(String descricao){
+		this.descreveArmadura = descricao;
+	}
+	String getmostraDescricao(){
+		return descreveArmadura;
+	}
+
+	//void set para guardar poder mágico e int get para mostrar
+	void setaumentaPoderMagico(int aumentaQuanto){
+		this.aumentaPoderMagico = aumentaQuanto;
+		heroiDoJogo.setpoderMagicoDoHeroi(aumentaQuanto);
+	}
+	int getaumentaPoderMagico(){
+		return this.aumentaPoderMagico;
+	}
+
+	//void set para força e int get para mostrar
+	void setaumentaForca(int aumentaQuanto){
+		this.aumentaForca = aumentaQuanto;
+		heroiDoJogo.setforcaDoHeroi(aumentaQuanto);
+	}
+	int getaumentaForca(){
+		return this.aumentaForca;
+	}
+
+	//void set para aumendar armadura e int get para mostrar
+	void setaumentaArmadura(int aumentaQuanto){
+		this.aumentaArmadura = aumentaQuanto;
+		heroiDoJogo.setdefesaDoHeroi(aumentaQuanto);
+	}
+	int getaumentaArmadura(){
+		return this.aumentaArmadura;
+	}
+
+	//void set para aumentar a vida
+	void setaumentaVida(int aumentaQuanto){
+		this.aumentaVida = aumentaQuanto;
+		heroiDoJogo.setvidaDoHeroi(aumentaQuanto);
+	}
+	int getaumentaVida(){
+		return this.aumentaVida;
+	}
+}
+
+
+/*
+#MostraInventario #invetario
+*/
+class MostraInventario{
+
+	//Equipamentos equipamentos = new Equipamentos();//Equipamentos do Heroi
+	EquipamentoArma equipamentosArma = new EquipamentoArma();
+	EquipamentoArmadura equipamentoArmadura = new EquipamentoArmadura();
+	Heroi heroiDoJogo = new Heroi();
+	//MostraInventario tudo = new MostraInventario();
+
+
+	public void mostrarAtributos(){
+		//System.out.println(heroiDoJogo.getpoderMagicoDoHeroi());
+		System.out.println("\n \n+---------------------------+\n|"+"*** "+heroiDoJogo.getnomeDoHeroi()+" ***"+"\n|Pontos de vida do Herois: "+heroiDoJogo.getvidaDoHeroi()+"\n|Força: "+heroiDoJogo.getforcaDoHeroi()+"\n|Defesa de Armadura: "+heroiDoJogo.getdefesaDoHeroi()+"\n|Poder Mágico: "+heroiDoJogo.getpoderMagicoDoHeroi()+"\n|                       \n|Coins: "+heroiDoJogo.getmoedasDoHerois()+"\n+---------------------------+");
+	}
+
+	public void mostraArma(){
+		System.out.println("|*** Arma Equipada ***");
+		System.out.println("|"+equipamentosArma.getmostraDescricao());
+
+		if(equipamentosArma.getaumentaForca() > 0){
+			System.out.println("|Arma aumenta a força em: "+equipamentosArma.getaumentaForca());
+		}
+		if(equipamentosArma.getaumentaPoderMagico() > 0){
+			System.out.println("|Arma aumenta o poder Mágico em: "+equipamentosArma.getaumentaPoderMagico());
+		}
+		if(equipamentosArma.getaumentaArmadura() > 0){
+			System.out.println("|Arma aumenta a Armadura em: "+equipamentosArma.getaumentaArmadura());
+		}
+		System.out.print("+---------------------------+\n");
+	}
+
+	public void mostrarArmadura(){
+		System.out.println("|*** Armadura Equipada ***");
+		System.out.println("|"+equipamentoArmadura.getmostraDescricao());
+
+		if(equipamentoArmadura.getaumentaForca() > 0){
+			System.out.println("|Armadura aumenta a força em: "+equipamentoArmadura.getaumentaForca());
+		}
+		if(equipamentoArmadura.getaumentaPoderMagico() > 0){
+			System.out.println("|Armadura aumenta o poder Mágico em: "+equipamentoArmadura.getaumentaPoderMagico());
+		}
+		if(equipamentoArmadura.getaumentaVida() > 0){
+			System.out.println("|Armadura aumenta a vida: "+equipamentoArmadura.getaumentaVida());
+		}
+		if(equipamentoArmadura.getaumentaArmadura() > 0){
+			System.out.println("|Armadura Defesa em: "+equipamentoArmadura.getaumentaArmadura());
+		}
+		System.out.print("+---------------------------+\n");
+	}
+
+
+}
+/*
+#experiencia
+*/
+
+class ExperienciaRecebida{
+
+	Scanner entrada = new Scanner(System.in);
+	Heroi heroiDoJogo = new Heroi();
+
+	public void receberExperiencia(int maximoDePontos){
+
+
+
+			int auxiliarGlobal;
+			int auxiliarDeVida;
+			int auxiliarDeDefesa;
+			int auxiliarDeForca;
+			int auxiliarMagia;
+
+			auxiliarGlobal = maximoDePontos;	
+
+		do{ 
+
+			maximoDePontos = auxiliarGlobal;
+			System.out.println("\n \n -----------------------------------------******************-----------------------------------------");
+			System.out.println("Você deve distribuir "+maximoDePontos+" de pontos entre os seus atributos. Vida, Defesa força e Magia");
+			System.out.println("Você ainda tem "+maximoDePontos+" pontos");
+
+			System.out.println("Quantos pontos você quer colocar no atributo Vida: ");
+			auxiliarDeVida = entrada.nextInt();
+			//heroiDoJogo.setvidaDoHeroi(auxiliar);
+			maximoDePontos = maximoDePontos - auxiliarDeVida;
+			System.out.println("Ainda resta:  "+maximoDePontos+" pontos");
+
+			System.out.println("Quantos pontos você quer colocar no atributo Defesa: ");
+			auxiliarDeDefesa = entrada.nextInt();
+			//heroiDoJogo.setdefesaDoHeroi(auxiliar);
+			maximoDePontos = maximoDePontos - auxiliarDeDefesa;
+			System.out.println("Ainda resta:  "+maximoDePontos+" pontos");
+
+			System.out.println("Quantos pontos você quer colocar no atributo Força: ");
+			auxiliarDeForca = entrada.nextInt();
+			//heroiDoJogo.setdefesaDoHeroi(auxiliar);
+			maximoDePontos = maximoDePontos - auxiliarDeForca;
+			System.out.println("Ainda resta:  "+maximoDePontos+" pontos");
+
+			System.out.println("Quantos pontos você quer colocar no atributo Magia: ");
+			auxiliarMagia = entrada.nextInt();
+			//heroiDoJogo.setdefesaDoHeroi(auxiliar);
+			maximoDePontos = maximoDePontos - auxiliarMagia;
+			System.out.println("Ainda resta:  "+maximoDePontos+" pontos");
+
+			//auxiliarGlobal = maximoDePontos;
+		}
+		while(maximoDePontos != 0);
+
+		heroiDoJogo.setvidaDoHeroi(auxiliarDeVida);
+		heroiDoJogo.setdefesaDoHeroi(auxiliarDeDefesa);
+		heroiDoJogo.setforcaDoHeroi(auxiliarDeForca);
+		heroiDoJogo.setpoderMagicoDoHeroi(auxiliarMagia);
+
+	}
 }
