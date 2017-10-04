@@ -50,7 +50,7 @@ class Game  {
 
 				formata.lento("Seja bem vido a este mudo de aventuras");
 				System.out.println();
-				formata.lento("Você é um servo a Magia ou é um Guerreiro?");
+				formata.lento("Você é um servo da Magia ou é um Guerreiro?");
 				System.out.println();
 				
 				imagens.guerreiroEMagoImagem();
