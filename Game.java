@@ -95,11 +95,11 @@ class Game  {
 				Thread.sleep(2000);	
 
 				imagens.placaDeQuest();
-				System.out.println();
-				
 
-				//d6.guerreiro();
-				//d6.mago();
+
+				
+				System.out.println();
+
 			
 			}
 	
@@ -515,7 +515,7 @@ class ExperienciaRecebida{
 		do{ 
 
 			maximoDePontos = auxiliarGlobal;
-			System.out.println("\n \n -----------------------------------------******************-----------------------------------------");
+			System.out.println("\n \n-----------------------------------------******************-----------------------------------------");
 			System.out.println("Você deve distribuir "+maximoDePontos+" de pontos entre os seus atributos: Vida, Defesa, força e Magia");
 			System.out.println("Você ainda tem "+maximoDePontos+" pontos");
 
@@ -562,5 +562,10 @@ class Enter{
 		System.out.println("\n \nPressione Enter para continuar.");
 		entrada.nextLine();
 	}
+
+}
+
+class Aventuras{
+
 
 }

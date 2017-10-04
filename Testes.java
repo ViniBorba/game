@@ -491,7 +491,7 @@ class ExperienciaRecebida{
 		do{ 
 
 			maximoDePontos = auxiliarGlobal;
-			System.out.println("\n \n -----------------------------------------******************-----------------------------------------");
+			System.out.println("\n \n-----------------------------------------******************-----------------------------------------");
 			System.out.println("Você deve distribuir "+maximoDePontos+" de pontos entre os seus atributos. Vida, Defesa força e Magia");
 			System.out.println("Você ainda tem "+maximoDePontos+" pontos");
 
