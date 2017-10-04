@@ -3,8 +3,6 @@ import java.util.Scanner;
 
 class Game  {
 
-
-
 			public static void main(String[] args) throws InterruptedException {
 
 
@@ -15,20 +13,17 @@ class Game  {
 				FormataString formata = new FormataString();
 				Imagens imagens = new Imagens();
 				Scanner entrada = new Scanner(System.in);
+				Enter pressioneEnter = new Enter();
 				ExperienciaRecebida recebeExperiencia = new ExperienciaRecebida();
 
 
-				System.out.println("\n \n \n \n \n \n");
+				System.out.println("\n \n");
 
 				formata.lento("Este é um mundo onde não se mede o tempo.");
 				System.out.println();
 				Thread.sleep(300);
 
 				formata.lento("Um mundo onde a magia, a força e a coragem são suas maiores armas.");
-				System.out.println();
-				Thread.sleep(300);
-
-				formata.lento("Um mundo além, muito além.");
 				System.out.println();
 				Thread.sleep(300);
 
@@ -49,28 +44,28 @@ class Game  {
 
 				imagens.nomeDoJogoImagem();
 
+				pressioneEnter.pressioneEnter();
+
 				Thread.sleep(2500);
 
 				formata.lento("Seja bem vido a este mudo de aventuras");
 				System.out.println();
-				formata.lento("Você é adepto da Magia ou é um Guerreiro nato?");
+				formata.lento("Você é um servo a Magia ou é um Guerreiro?");
 				System.out.println();
 				
 				imagens.guerreiroEMagoImagem();
 				System.out.println("Digite 1 para MAGO ou pressione 2 para GUERREIRO");
 				heroiDoJogo.recebeHeroi(entrada.nextInt());
-
-				
 				
 				mostra.mostrarAtributos();
 				mostra.mostraArma();
 				mostra.mostrarArmadura();
 
-				Thread.sleep(2000);
+				pressioneEnter.pressioneEnter();
+
+				//Thread.sleep(2000);
 
 				formata.lento("Você recebe inicialmente 15 pornto para aumentar seus atributos");
-				System.out.println();
-				formata.lento("Ao longo do jogo você vai receber mais pontos conforme avance");
 				System.out.println();
 				
 				recebeExperiencia.receberExperiencia(15);
@@ -78,6 +73,8 @@ class Game  {
 				mostra.mostrarAtributos();
 				mostra.mostraArma();
 				mostra.mostrarArmadura();
+
+				pressioneEnter.pressioneEnter();
 
 				//#começa #começaaventura #aventura
 
@@ -88,7 +85,7 @@ class Game  {
 
 				formata.lento("A Taverna do Javali Saltitante é um belo lugar para gastar moedas.");
 				System.out.println();
-				formata.lento("Pena você não ter nem uma moeda no bolço.");
+				formata.lento("Pena você não ter nem uma moeda no bolso.");
 				System.out.println();
 				formata.lento("A melhor maneira de conseguir moedas é aceitando uma das aventuras no mural da praça.");
 				System.out.println();
@@ -556,4 +553,14 @@ class ExperienciaRecebida{
 		heroiDoJogo.setpoderMagicoDoHeroi(auxiliarMagia);
 
 	}
+}
+
+class Enter{
+	Scanner entrada = new Scanner(System.in);
+
+	void pressioneEnter(){
+		System.out.println("\n \nPressione Enter para continuar.");
+		entrada.nextLine();
+	}
+
 }
