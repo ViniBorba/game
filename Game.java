@@ -3,116 +3,101 @@ import java.util.Scanner;
 
 class Game  {
 
-			public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) throws InterruptedException {
 
 
-				Heroi heroiDoJogo = new Heroi();
-				//EquipamentoArma cajadoSimplorio = new EquipamentoArma();
-				MostraInventario mostra = new MostraInventario();
-				//EquipamentoArmadura armaduraSimples = new EquipamentoArmadura();
-				FormataString formata = new FormataString();
-				Imagens imagens = new Imagens();
-				Scanner entrada = new Scanner(System.in);
-				Enter pressioneEnter = new Enter();
-				ExperienciaRecebida recebeExperiencia = new ExperienciaRecebida();
+		Heroi heroiDoJogo = new Heroi();
+		//EquipamentoArma cajadoSimplorio = new EquipamentoArma();
+		MostraInventario mostra = new MostraInventario();
+		//EquipamentoArmadura armaduraSimples = new EquipamentoArmadura();
+		FormataString formata = new FormataString();
+		Imagens imagens = new Imagens();
+		Scanner entrada = new Scanner(System.in);
+		Enter pressioneEnter = new Enter();
+		ExperienciaRecebida recebeExperiencia = new ExperienciaRecebida();
 
+		System.out.println("\n \n");
 
-				System.out.println("\n \n");
+		formata.lento("Este é um mundo onde não se mede o tempo.");
+		System.out.println();
+		Thread.sleep(300);
 
-				formata.lento("Este é um mundo onde não se mede o tempo.");
-				System.out.println();
-				Thread.sleep(300);
+		formata.lento("Um mundo onde a magia, a força e a coragem são suas maiores armas.");
+		System.out.println();
+		Thread.sleep(300);
 
-				formata.lento("Um mundo onde a magia, a força e a coragem são suas maiores armas.");
-				System.out.println();
-				Thread.sleep(300);
+		formata.lento("Onde os Deuses e Deusas, Herois e Vilões, Monstros e Aberrações vivem.");
+		System.out.println();
+		Thread.sleep(300);
 
-				formata.lento("Onde os Deuses e Deusas, Herois e Vilões, Monstros e Aberrações vivem.");
-				System.out.println();
-				Thread.sleep(300);
-
-				formata.lento("Mas nada se compara ao que está por vir");
-				Thread.sleep(800);
-				System.out.print(".");
-				Thread.sleep(900);
-				System.out.print(".");
-				Thread.sleep(900);
-				System.out.print(".");
-				System.out.println();
+		formata.lento("Mas nada se compara ao que está por vir");
+		Thread.sleep(800);
+		System.out.print(".");
+		Thread.sleep(900);
+		System.out.print(".");
+		Thread.sleep(900);
+		System.out.print(".");
+		System.out.println();
 				
-				Thread.sleep(2000);
+		Thread.sleep(2000);
 
-				imagens.nomeDoJogoImagem();
+		imagens.nomeDoJogoImagem();
 
-				pressioneEnter.pressioneEnter();
+		pressioneEnter.pressioneEnter();
 
-				Thread.sleep(2500);
-/*
-				formata.lento("Seja bem vido a este mudo de aventuras");
-				System.out.println();
-				formata.lento("Você é um servo da Magia ou é um Guerreiro?");
-				System.out.println();
+		Thread.sleep(2500);
+
+		formata.lento("Seja bem vido a este mudo de aventuras");
+		System.out.println();
+
+		heroiDoJogo.recebeHeroi();
+
+		mostra.mostrarAtributos();
+		mostra.mostraArma();
+		mostra.mostrarArmadura();
+
+		pressioneEnter.pressioneEnter();
+
+		//Thread.sleep(2000);
+
+		formata.lento("Você recebe inicialmente 15 pornto para aumentar seus atributos");
+		System.out.println();
 				
-				imagens.guerreiroEMagoImagem();
-				System.out.println("Digite 1 para MAGO ou pressione 2 para GUERREIRO");
-				heroiDoJogo.recebeHeroi(entrada.nextInt());
-*/				
-				formata.lento("Seja bem vido a este mudo de aventuras");
-				System.out.println();
+		recebeExperiencia.receberExperiencia(15);
 
-				heroiDoJogo.recebeHeroi();
+		mostra.mostrarAtributos();
+		mostra.mostraArma();
+		mostra.mostrarArmadura();
 
+		pressioneEnter.pressioneEnter();
 
-				mostra.mostrarAtributos();
-				mostra.mostraArma();
-				mostra.mostrarArmadura();
+		//#começa #começaaventura #aventura
 
-				pressioneEnter.pressioneEnter();
+		Thread.sleep(2000);
+		System.out.println("\n \n****** TABERNA DO JAVALI SALTITANTE ******\n \n");
+		Thread.sleep(2000);
+		imagens.placaDaTaberna();
 
-				//Thread.sleep(2000);
+		formata.lento("A Taverna do Javali Saltitante é um belo lugar para gastar moedas.");
+		System.out.println();
+		formata.lento("Pena você não ter nem uma moeda no bolso.");
+		System.out.println();
+		formata.lento("A melhor maneira de conseguir moedas é aceitando uma das aventuras no mural da praça.");
+		System.out.println();
 
-				formata.lento("Você recebe inicialmente 15 pornto para aumentar seus atributos");
-				System.out.println();
-				
-				recebeExperiencia.receberExperiencia(15);
+		formata.lento("Vamos até lá.");
+		System.out.println();
+		Thread.sleep(2000);	
 
-				mostra.mostrarAtributos();
-				mostra.mostraArma();
-				mostra.mostrarArmadura();
-
-				pressioneEnter.pressioneEnter();
-
-				//#começa #começaaventura #aventura
-
-				Thread.sleep(2000);
-				System.out.println("\n \n****** TABERNA DO JAVALI SALTITANTE ******\n \n");
-				Thread.sleep(2000);
-				imagens.placaDaTaberna();
-
-				formata.lento("A Taverna do Javali Saltitante é um belo lugar para gastar moedas.");
-				System.out.println();
-				formata.lento("Pena você não ter nem uma moeda no bolso.");
-				System.out.println();
-				formata.lento("A melhor maneira de conseguir moedas é aceitando uma das aventuras no mural da praça.");
-				System.out.println();
-
-				formata.lento("Vamos até lá.");
-				System.out.println();
-				Thread.sleep(2000);	
-
-				imagens.placaDeQuest();
+		imagens.placaDeQuest();
 
 
 				
-				System.out.println();
+		System.out.println();
 
-			
-			}
+	}
 	
-
-
-
-
+		/*
 	//int é o objeto do array dado6
 	 public int sorteiaDadoD6(){
 		
@@ -134,7 +119,7 @@ class Game  {
 	void muda(){
 		System.out.println("Olá");
 	}
-
+		*/
 }
 
 /*
@@ -163,133 +148,123 @@ class Heroi{
 		boolean tastaOLoop = true;
 		int escolhaDeHeroi;
 
-
-
 		while(tastaOLoop == true){
 
+			formata.lento("Você é um servo da Magia ou é um Guerreiro?");
+			System.out.println();
+					
+			imagens.guerreiroEMagoImagem();
+			System.out.println("Digite 1 para MAGO ou pressione 2 para GUERREIRO");
+			//heroiDoJogo.recebeHeroi(entrada.nextInt());
+			escolhaDeHeroi = entrada.nextInt();
 
-
-				formata.lento("Você é um servo da Magia ou é um Guerreiro?");
-				System.out.println();
-				
-				imagens.guerreiroEMagoImagem();
-				System.out.println("Digite 1 para MAGO ou pressione 2 para GUERREIRO");
-				//heroiDoJogo.recebeHeroi(entrada.nextInt());
-				escolhaDeHeroi = entrada.nextInt();
-
-
-
-
-		if(escolhaDeHeroi == 1){
-			formata.lento("Você escolheu o Mago.\n");
-			formata.lento("Escolha um nome para o seu Heroi: ");
-			this.nomeDoHeroi = entrada.next();
-
-			vidaDoHeroi = 30;
-			forcaDoHeroi = 2;
-			defesaDoHeroi = 2;
-			poderMagicoDoHeroi = 6;
-			moedasDoHerois = 0;
-
-			//Equipamentos
-			//equipamentos.cajadoSimples();
-			EquipamentoArma cajadoSimplorio = new EquipamentoArma();
-			cajadoSimplorio.setdescreveArma("Cajado Simples");
-			cajadoSimplorio.setaumentaPoderMagico(1);
-
-			EquipamentoArmadura armaduraSimples = new EquipamentoArmadura();	
-			armaduraSimples.setdescreveArmadura("Amadura Simples");
-			armaduraSimples.setaumentaArmadura(10);
-			armaduraSimples.setaumentaVida(10);
-
-			formata.lento("Sua maior força é a Magia.\n");
-			formata.lento("Seus atributos: ");
-
-			tastaOLoop = false;
-				
-		}	
-			else if (escolhaDeHeroi == 2){
-				formata.lento("Você escolheu ser Geurreiro\n");
+			if(escolhaDeHeroi == 1){
+				formata.lento("Você escolheu o Mago.\n");
 				formata.lento("Escolha um nome para o seu Heroi: ");
 				this.nomeDoHeroi = entrada.next();
 
 				vidaDoHeroi = 30;
-				forcaDoHeroi = 6;
+				forcaDoHeroi = 2;
 				defesaDoHeroi = 2;
-				poderMagicoDoHeroi = 2;
+				poderMagicoDoHeroi = 6;
 				moedasDoHerois = 0;
 
 				//Equipamentos
 				//equipamentos.cajadoSimples();
-				EquipamentoArma machadoSimplorio = new EquipamentoArma();
-				machadoSimplorio.setdescreveArma("Machado Simples");
-				machadoSimplorio.setaumentaForca(1);
-				
-				EquipamentoArmadura armaduraSimples = new EquipamentoArmadura();
+				EquipamentoArma cajadoSimplorio = new EquipamentoArma();
+				cajadoSimplorio.setdescreveArma("Cajado Simples");
+				cajadoSimplorio.setaumentaPoderMagico(1);
+
+				EquipamentoArmadura armaduraSimples = new EquipamentoArmadura();	
 				armaduraSimples.setdescreveArmadura("Amadura Simples");
 				armaduraSimples.setaumentaArmadura(10);
 				armaduraSimples.setaumentaVida(10);
-				formata.lento("Use a força Bruta para derrubar seus inimigos.\n");
+
+				formata.lento("Sua maior força é a Magia.\n");
 				formata.lento("Seus atributos: ");
+
 				tastaOLoop = false;
-				
-			}
-				else{
-				//System.out.println("Escolha entre o número 1 para serveir a Magia e o número 2 para servir a Força");
-				tastaOLoop =  true;
-				//heroiDoJogo.recebeHeroi(entrada.next());
+					
+			}	
+				else if (escolhaDeHeroi == 2){
+					formata.lento("Você escolheu ser Geurreiro\n");
+					formata.lento("Escolha um nome para o seu Heroi: ");
+					this.nomeDoHeroi = entrada.next();
+
+					vidaDoHeroi = 30;
+					forcaDoHeroi = 6;
+					defesaDoHeroi = 2;
+					poderMagicoDoHeroi = 2;
+					moedasDoHerois = 0;
+
+					//Equipamentos
+					//equipamentos.cajadoSimples();
+					EquipamentoArma machadoSimplorio = new EquipamentoArma();
+					machadoSimplorio.setdescreveArma("Machado Simples");
+					machadoSimplorio.setaumentaForca(1);
+					
+					EquipamentoArmadura armaduraSimples = new EquipamentoArmadura();
+					armaduraSimples.setdescreveArmadura("Amadura Simples");
+					armaduraSimples.setaumentaArmadura(10);
+					armaduraSimples.setaumentaVida(10);
+					formata.lento("Use a força Bruta para derrubar seus inimigos.\n");
+					formata.lento("Seus atributos: ");
+					tastaOLoop = false;
 					
 				}
+					else{
+						//System.out.println("Escolha entre o número 1 para serveir a Magia e o número 2 para servir a Força");
+						tastaOLoop =  true;
+						//heroiDoJogo.recebeHeroi(entrada.next());
+					}
+		}//Fim do while 
+	}//Fim do Metodo recebeHeroi()
+
+	//GET para mostrar atributos e SET para mudar os atributos
+	//Get mostra nome do Heroi
+	public String getnomeDoHeroi(){
+		return this.nomeDoHeroi;
 	}
 
+	//set voi para mudar a força e get int para mostrar retornar a força
+	public void setforcaDoHeroi(int recebe){
+		this.forcaDoHeroi += recebe;
+	}
+	public int getforcaDoHeroi(){
+		return this.forcaDoHeroi;
 	}
 
-		//GET para mostrar atributos e SET para mudar os atributos
-		
-		//Get mostra nome do Heroi
-		public String getnomeDoHeroi(){
-			return this.nomeDoHeroi;
-		}
+	//set void para mudar a defesa e get int para mostrar a defesa
+	public void setdefesaDoHeroi(int recebe){
+		this.defesaDoHeroi += recebe;
+	}
+	public int getdefesaDoHeroi(){
+		return this.defesaDoHeroi;
+	}
 
-		//set voi para mudar a força e get int para mostrar retornar a força
-		public void setforcaDoHeroi(int recebe){
-			this.forcaDoHeroi += recebe;
-		}
-		public int getforcaDoHeroi(){
-			return this.forcaDoHeroi;
-		}
+	//set void para mudar o porder mágico e get int para mostrar
+	public void setpoderMagicoDoHeroi(int recebe){
+		this.poderMagicoDoHeroi += recebe;
+	}
+	public int getpoderMagicoDoHeroi(){
+		return this.poderMagicoDoHeroi;
+	}
 
-		//set void para mudar a defesa e get int para mostrar a defesa
-		public void setdefesaDoHeroi(int recebe){
-			this.defesaDoHeroi += recebe;
-		}
-		public int getdefesaDoHeroi(){
-			return this.defesaDoHeroi;
-		}
+	//void seta para receber valor de moedas get int para mostrar quantas moedas tem
+	public void setmoedasDoHeroi(int recebe){
+		this.moedasDoHerois += recebe;
+	}
+	public int getmoedasDoHerois(){
+		return this.moedasDoHerois;
+	}
 
-		//set void para mudar o porder mágico e get int para mostrar
-		public void setpoderMagicoDoHeroi(int recebe){
-			this.poderMagicoDoHeroi += recebe;
-		}
-		public int getpoderMagicoDoHeroi(){
-			return this.poderMagicoDoHeroi;
-		}
-
-		//void seta para receber valor de moedas get int para mostrar quantas moedas tem
-		public void setmoedasDoHeroi(int recebe){
-			this.moedasDoHerois += recebe;
-		}
-		public int getmoedasDoHerois(){
-			return this.moedasDoHerois;
-		}
-
-		//void seta para aumentar e recuperar vida get int para mostra a vida
-		public void setvidaDoHeroi(int recebe){
-			this.vidaDoHeroi += recebe;
-		}
-		public int getvidaDoHeroi(){
-			return this.vidaDoHeroi;
-		}
+	//void seta para aumentar e recuperar vida get int para mostra a vida
+	public void setvidaDoHeroi(int recebe){
+		this.vidaDoHeroi += recebe;
+	}
+	public int getvidaDoHeroi(){
+		return this.vidaDoHeroi;
+	}
 }
 
 
