@@ -47,7 +47,7 @@ class Game  {
 				pressioneEnter.pressioneEnter();
 
 				Thread.sleep(2500);
-
+/*
 				formata.lento("Seja bem vido a este mudo de aventuras");
 				System.out.println();
 				formata.lento("Você é um servo da Magia ou é um Guerreiro?");
@@ -56,7 +56,13 @@ class Game  {
 				imagens.guerreiroEMagoImagem();
 				System.out.println("Digite 1 para MAGO ou pressione 2 para GUERREIRO");
 				heroiDoJogo.recebeHeroi(entrada.nextInt());
-				
+*/				
+				formata.lento("Seja bem vido a este mudo de aventuras");
+				System.out.println();
+
+				heroiDoJogo.recebeHeroi();
+
+
 				mostra.mostrarAtributos();
 				mostra.mostraArma();
 				mostra.mostrarArmadura();
@@ -149,11 +155,32 @@ class Heroi{
 
 	
 	//Metodo para iniciar o Herois, depedendo da escolha do jogador
-	void recebeHeroi (int letra)throws InterruptedException{
+	void recebeHeroi ()throws InterruptedException{
 		FormataString formata = new FormataString();//objeto da classe que formata String
 		Scanner entrada = new Scanner(System.in);//salva atributos do heroi
 		//MostraInventario invetario = new MostraInventario();// mostra os atributos e equipamentos.
-		if(letra == 1){
+		Imagens imagens = new Imagens();
+		boolean tastaOLoop = true;
+		int escolhaDeHeroi;
+
+
+
+		while(tastaOLoop == true){
+
+
+
+				formata.lento("Você é um servo da Magia ou é um Guerreiro?");
+				System.out.println();
+				
+				imagens.guerreiroEMagoImagem();
+				System.out.println("Digite 1 para MAGO ou pressione 2 para GUERREIRO");
+				//heroiDoJogo.recebeHeroi(entrada.nextInt());
+				escolhaDeHeroi = entrada.nextInt();
+
+
+
+
+		if(escolhaDeHeroi == 1){
 			formata.lento("Você escolheu o Mago.\n");
 			formata.lento("Escolha um nome para o seu Heroi: ");
 			this.nomeDoHeroi = entrada.next();
@@ -177,9 +204,11 @@ class Heroi{
 
 			formata.lento("Sua maior força é a Magia.\n");
 			formata.lento("Seus atributos: ");
+
+			tastaOLoop = false;
 				
 		}	
-			else if (letra == 2){
+			else if (escolhaDeHeroi == 2){
 				formata.lento("Você escolheu ser Geurreiro\n");
 				formata.lento("Escolha um nome para o seu Heroi: ");
 				this.nomeDoHeroi = entrada.next();
@@ -202,14 +231,17 @@ class Heroi{
 				armaduraSimples.setaumentaVida(10);
 				formata.lento("Use a força Bruta para derrubar seus inimigos.\n");
 				formata.lento("Seus atributos: ");
+				tastaOLoop = false;
 				
 			}
 				else{
-				System.out.println("Nada");
+				//System.out.println("Escolha entre o número 1 para serveir a Magia e o número 2 para servir a Força");
+				tastaOLoop =  true;
 				//heroiDoJogo.recebeHeroi(entrada.next());
 					
 				}
-	
+	}
+
 	}
 
 		//GET para mostrar atributos e SET para mudar os atributos
