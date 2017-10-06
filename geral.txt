@@ -4,6 +4,17 @@ Ideias soltas:
 [Mostrar imagens das armaduras e espedas.]
 
 .............................................................
+DEFESA
+
+Calculo da defesa: Verefica se tem levantar escudo ativado
+					o total do ataque é = 
+					total do ataque - armadura - defesa - levantar escudo
+
+.............................................................
+ATAQUES
+.............................................................
+MAGIAS
+.............................................................
 
 Começa: Este é um mundo onde onde não se mede o tempo.
 		Um mundo onde a magia, a força e a coragem são suas maiores armas.
@@ -31,3 +42,8 @@ Começa na Taberna
 		No centro da cidade ha um mural com algumas aventuras, aceite uma delas.
 
 Mostrar o mural com aventuras
+
+		Aventura 1: "Esqueletos estão levantando de suas tumbas no velho cemitério"
+			
+		Aventura 2: "Coisas estranhas estão acontecendo na FLoresta Velha"
+		Aventura 3: "Pragas estão destruindo toda a safra de castanhas da cidade"

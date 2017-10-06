@@ -20,6 +20,7 @@ class Game  {
 				AtaquesMagias ataquesEmagias = new AtaquesMagias();
 				Dados dadoD6 = new Dados();
 				ImagemDosDados imagemDosDados = new ImagemDosDados();
+				Defesa defender = new Defesa();
 
 				//mostra.mostrarAtributos();
 
@@ -32,15 +33,18 @@ class Game  {
 				System.out.println("Lentar Escudo igual a: "+ataquesEmagias.getErguerEscudo());
 				ataquesEmagias.seterguerEscudo();
 				System.out.println("Lentar Escudo igual a é para ser igual a 6 = : "+ataquesEmagias.getErguerEscudo());
-				ataquesEmagias.zeraErguerEscudo();
-				System.out.println("Lentar Escudo igual a: "+ataquesEmagias.getErguerEscudo());
+
 				System.out.println("\n \n ");
 
+				System.out.println("Total do Ataque 80");
+				System.out.println("Defesa: "+defender.heroiDefendeAtaque(80));
+
+
 				
-				int i = dadoD6.rolaDadoD6();
-				System.out.println(i);
-				System.out.println(i % 2);
-				System.out.println(imagemDosDados.retornaIMagemDoDado(i));
+				//int i = dadoD6.rolaDadoD6();
+				//System.out.println(i);
+				//System.out.println(i % 2);
+				//System.out.println(imagemDosDados.retornaIMagemDoDado(i));
 
 
 /*
@@ -605,6 +609,7 @@ class ExperienciaRecebida{
 	}
 }
 
+//#enter
 class Enter{
 	Scanner entrada = new Scanner(System.in);
 
@@ -614,6 +619,8 @@ class Enter{
 	}
 
 }
+
+
 class Dados{
 
 	Random radom  = new Random();
@@ -650,14 +657,32 @@ class Defesa{
 
 	Dados dado = new Dados();
 	ImagemDosDados imagemDosDados = new ImagemDosDados();
+	AtaquesMagias defesas = new AtaquesMagias();
+	Enter tecleEnter = new Enter();
+	Heroi heroiDoJogo = new Heroi();
+	EquipamentoArmadura armaduraDefende = new EquipamentoArmadura();
 
-	int heroiDefendeAtaque(int dadoDoAtaque){
-		int dadoRolado = dado.rolaDadoD6();
+	//Metodo vai chamar para defender-se de um ataque
+	int heroiDefendeAtaque(int totalDoAtaque){
 
-		 //se o resultado do dado for par ele defende com eguer o escudo
-		if(dadoRolado % 2 ==  0){
-			System.out.println();
+		//se o levantar escudo estiver ativado ele faz o teste para ver se aumenta a defesa
+		if(defesas.getErguerEscudo() > 0){	
+
+			System.out.println("Lançe o dado para ver se escudo levanta \nSe o número for par o o escudo levanta.");
+			tecleEnter.pressioneEnter();
+			int dadoRolado;
+			dadoRolado = dado.rolaDadoD6();
+			System.out.println(imagemDosDados.retornaIMagemDoDado(dadoRolado));
+
+			 //se o resultado do dado for par ele defende com erguer o escudo
+			if(dadoRolado % 2 ==  0){
+				System.out.println("Defesa aumenta em: "+defesas.getErguerEscudo());
+				totalDoAtaque = totalDoAtaque - defesas.getErguerEscudo();
+			}
+
+			totalDoAtaque = totalDoAtaque - (heroiDoJogo.getdefesaDoHeroi() + armaduraDefende.getaumentaArmadura());
+			
 		}
-		return 1;
+		return totalDoAtaque;	
 	}
 }
