@@ -723,4 +723,6 @@ class Ataque{//O heroi vai ter vários ataques, cada um vai variar conforme a cl
 
 		 return heroiDoJogo.getforcaDoHeroi() + armaEquipada.getaumentaForca();
 	}
+
+	
 }
