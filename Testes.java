@@ -686,3 +686,23 @@ class Defesa{
 		return totalDoAtaque;	
 	}
 }
+
+class Inimigos{
+	int ataqueDoInimigo;
+	int defesaDoInimigo;
+
+	void setataqueDoInimigo(int quantoDeAtaque){
+		this.ataqueDoInimigo = quantoDeAtaque;
+	}
+	int getataqueDoInimigo(){
+		return this.ataqueDoInimigo;
+	}
+
+	void setdefesaDoInimigo (int quantoDeDefesa){
+		this.defesaDoInimigo = quantoDeDefesa;
+	}
+	int getdefesaDoInimigo(){
+		return this.defesaDoInimigo;
+	}
+
+}
