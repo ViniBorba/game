@@ -572,7 +572,12 @@ class Enter{
 
 }
 
-class Aventuras{
+class AtaquesMagias{
 
+	void erguerEscudo(){
+		//+3 de defesa até o final desta aventura
+		static defesaDeErguerEscudo;
+		defesaDeErguerEscudo = defesaDeErguerEscudo + 3;
+	}
 
 }
