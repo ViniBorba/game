@@ -686,7 +686,7 @@ class Defesa{
 		return totalDoAtaque;	
 	}
 }
-
+//#inimigo
 class Inimigos{
 	int ataqueDoInimigo;
 	int defesaDoInimigo;
@@ -705,4 +705,22 @@ class Inimigos{
 		return this.defesaDoInimigo;
 	}
 
+}
+
+class Ataque{//O heroi vai ter vários ataques, cada um vai variar conforme a classe, mago ou guerreiro
+
+	Heroi heroiDoJogo = new Heroi();
+	EquipamentoArma armaEquipada = new EquipamentoArma();
+
+	//Ataque pricipal do Mago tiro arcana
+	int ataquePrincipalMago(){
+
+		 return heroiDoJogo.getpoderMagicoDoHeroi() + armaEquipada.getaumentaPoderMagico();
+	}
+
+	//Ataque pricipal do GUerreiro Fio do Machado 
+	int ataquePrincipalGuerreiro(){
+
+		 return heroiDoJogo.getforcaDoHeroi() + armaEquipada.getaumentaForca();
+	}
 }
