@@ -320,6 +320,38 @@ class Imagens{
 	}   	
 
 }
+//#imagemdado
+class ImagemDosDados{
+
+	String retornaIMagemDoDado(int sorteio){
+		switch (sorteio){
+			//case "Vitor".hashCode() : System.out.println("Valor de nome é Vitor");
+			case 1 :
+			return "                              \n         Resultado: 1         \n                              \n                              \n             @###             \n           @#####8#           \n        @############         \n      @###############@       \n    #####################     \n @############ ###########@   \n@8##########    ############@ \n 88##########  #############8@\n 8888#####################888@\n 8..888#################88888@\n 88.8888##############88...88@\n 888888888#########88888.888#@\n #8888888888#####88888888888#@\n #..8..88.888###8..888888888@@\n  8.88..8..8888...8888888888@@\n   #88888888888888888888..8#  \n     88888888888888888888#    \n      #8888888888888888#      \n        8..888888..88#        \n         #888888..8@          \n           #88888@            \n            @8#@              \n                              \n                              \n                              \n                              \n";   
+       		//break;
+       		case 2 :
+			return "                              \n         Resultado: 2         \n                              \n                              \n             ####             \n           ########           \n        #############         \n      #################       \n    #####################     \n  ###8   8#############8####  \n 8##################8   ##### \n 88##################888####8 \n 8888#####################888 \n 888888#################88888 \n 8888888##############88...88 \n 888888888#########88888.888# \n 8888888888######88888888888# \n #888...88888###888888888888# \n @8888..8888888...8888888888@ \n   #88888888888888888888..8#  \n    @88888888888888888888#    \n      #888888888888888##      \n        888888888.888@        \n         #888888..8#          \n           #88888@            \n            #88@              \n                              \n                              \n                              \n                              \n";   
+       		//break;
+       		case 3 :
+			return "                              \n         Resultado: 3         \n                              \n                              \n             @###             \n           @#888#8#           \n        @###8   8####         \n      @#######88######@       \n    ####################@     \n @##########8888##########@   \n@8##########8   ############@ \n 88###########8#############8 \n 8888#####################888 \n 8..888#####8888########88888 \n 88.8888####    ######8888888 \n 888888888##888####888888888# \n #8888888888######8888888888# \n #..8..88.888##8888888888888@ \n  8.88..8..888888888...88888  \n   #8888888888888888.888888#  \n     88888888888888888888#    \n      #8888888888888888@      \n        8..8888888888@        \n         #88888888#@          \n           #88888@            \n            @8#@              \n                              \n                              \n                              \n                              \n";   
+       		//break;
+       		case 4 :
+			return "                              \n         Resultado: 4         \n                              \n                              \n             @###             \n           @#888#8#           \n        @###8   8####         \n      @#######88######@       \n   @##88#################     \n @##8   8############888##@   \n@8###888############8   ####@ \n 88##################888####8 \n 8888#####################888 \n 8..888#####8888########88888 \n 88888888###    ######88...88 \n #88888888###88####88888.888# \n #8888888888#####88888888..8# \n #..8..88.888##88..88888.888@ \n  8.88..8..8888...8888888888@ \n   @88888888888888888888..8#  \n     88888888888...88888##    \n      @88.8888888888888@      \n        #..88888...88@        \n         @888888..#@          \n           #88888@            \n            @8#@              \n                              \n                              \n                              \n                              \n";   
+       		//break;
+       		case 5 :
+			return "                              \n         Resultado: 5         \n                              \n                              \n              ###             \n           @#888###           \n         ###8   8####         \n      @#8####888######@       \n    ##8##################     \n  #8#   8###8888#####888##@   \n 8###8*88###8   ####8   8###@ \n 88##########88######888####8 \n 8888#####################888 \n 8..888#####8888########88888 \n #8.88888###    ######88...88 \n #888..888###88#####8888.8888 \n @8888..8888######8888888888# \n @..88888.888##88..888888888@ \n  8..8888..88888..8888888888@ \n   @8..88888888888888888..8#  \n     8..88888888888888888#    \n      @8888888888#88888@      \n        #..888888..8##        \n         @888888..8@          \n           #88888@            \n            @8#@              \n                              \n                              \n                              \n                              \n";   
+       		//break;
+       		case 6 :
+			return "                              \n         Resultado: 6         \n                              \n                              \n            @###@             \n          @########@          \n       @#####   #####@        \n     @#################@      \n   @#############   #####@    \n @###  ####################@  \n@####################   ####@ \n 8@######   ###############8@ \n 88@#####   ##############888 \n 8..@###################88888 \n 8888@#######   ######88...88 \n #88888@###########88888.888# \n #8888888#########8888888888# \n #..8..88.8####8888888888888@ \n  8.88..8..888888888...88888@ \n   @88888888888888888888888#  \n     8888888888888888888##    \n      @8888888888888888@      \n        #..88888...88@        \n         @888888..#@          \n           #88888@            \n            @8#@              \n                              \n                              \n                              \n";   
+       		//break;
+
+
+       		default:
+       		return "deu erro"; 	 
+		}
+		//return "dado deu 1"; 
+	}
+}
 
 /*
 #armas #equipamentos
@@ -562,6 +594,7 @@ class ExperienciaRecebida{
 	}
 }
 
+//#enter
 class Enter{
 	Scanner entrada = new Scanner(System.in);
 
@@ -572,12 +605,109 @@ class Enter{
 
 }
 
-class AtaquesMagias{
 
-	void erguerEscudo(){
+class Dados{
+
+	Random radom  = new Random();
+
+	int rolaDadoD6(){
+		return radom.nextInt(6) + 1;
+	}
+}
+
+
+/*
+#magias #ataques
+*/
+
+class AtaquesMagias{
+	private static int defesaDeErguerEscudo;
+
+	void seterguerEscudo(){
 		//+3 de defesa até o final desta aventura
-		static defesaDeErguerEscudo;
 		defesaDeErguerEscudo = defesaDeErguerEscudo + 3;
 	}
+	//entraga o valor de erguer escudo
+	int getErguerEscudo(){
+		return defesaDeErguerEscudo;
+	}
+	//zera erquer escudo no fim da aventura
+	void zeraErguerEscudo(){
+		defesaDeErguerEscudo = 0;
+	}
 
+}
+
+class Defesa{
+
+	Dados dado = new Dados();
+	ImagemDosDados imagemDosDados = new ImagemDosDados();
+	AtaquesMagias defesas = new AtaquesMagias();
+	Enter tecleEnter = new Enter();
+	Heroi heroiDoJogo = new Heroi();
+	EquipamentoArmadura armaduraDefende = new EquipamentoArmadura();
+
+	//Metodo vai chamar para defender-se de um ataque
+	int heroiDefendeAtaque(int totalDoAtaque){
+
+		//se o levantar escudo estiver ativado ele faz o teste para ver se aumenta a defesa
+		if(defesas.getErguerEscudo() > 0){	
+
+			System.out.println("Lançe o dado para ver se escudo levanta \nSe o número for par o o escudo levanta.");
+			tecleEnter.pressioneEnter();
+			int dadoRolado;
+			dadoRolado = dado.rolaDadoD6();
+			System.out.println(imagemDosDados.retornaIMagemDoDado(dadoRolado));
+
+			 //se o resultado do dado for par ele defende com erguer o escudo
+			if(dadoRolado % 2 ==  0){
+				System.out.println("Defesa aumenta em: "+defesas.getErguerEscudo());
+				totalDoAtaque = totalDoAtaque - defesas.getErguerEscudo();
+			}
+
+			totalDoAtaque = totalDoAtaque - (heroiDoJogo.getdefesaDoHeroi() + armaduraDefende.getaumentaArmadura());
+			
+		}
+		return totalDoAtaque;	
+	}
+}
+//#inimigo
+class Inimigos{
+	int ataqueDoInimigo;
+	int defesaDoInimigo;
+
+	void setataqueDoInimigo(int quantoDeAtaque){
+		this.ataqueDoInimigo = quantoDeAtaque;
+	}
+	int getataqueDoInimigo(){
+		return this.ataqueDoInimigo;
+	}
+
+	void setdefesaDoInimigo (int quantoDeDefesa){
+		this.defesaDoInimigo = quantoDeDefesa;
+	}
+	int getdefesaDoInimigo(){
+		return this.defesaDoInimigo;
+	}
+
+}
+
+class Ataque{//O heroi vai ter vários ataques, cada um vai variar conforme a classe, mago ou guerreiro
+
+	Heroi heroiDoJogo = new Heroi();
+	EquipamentoArma armaEquipada = new EquipamentoArma();
+
+	//Ataque pricipal do Mago tiro arcana
+	int ataquePrincipalMago(){
+
+		 return heroiDoJogo.getpoderMagicoDoHeroi() + armaEquipada.getaumentaPoderMagico();
+	}
+
+	//Ataque pricipal do GUerreiro Fio do Machado 
+	int ataquePrincipalGuerreiro(){
+
+		 return heroiDoJogo.getforcaDoHeroi() + armaEquipada.getaumentaForca();
+	}
+
+	
 }
