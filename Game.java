@@ -1,7 +1,7 @@
 import java.util.Random;
 import java.util.Scanner;
 
-class Game  {
+public class Game  {
 
 	public static void main(String[] args) throws InterruptedException {
 
@@ -140,7 +140,7 @@ class Heroi{
 
 	
 	//Metodo para iniciar o Herois, depedendo da escolha do jogador
-	void recebeHeroi ()throws InterruptedException{
+	public void recebeHeroi ()throws InterruptedException{
 		FormataString formata = new FormataString();//objeto da classe que formata String
 		Scanner entrada = new Scanner(System.in);//salva atributos do heroi
 		//MostraInventario invetario = new MostraInventario();// mostra os atributos e equipamentos.
